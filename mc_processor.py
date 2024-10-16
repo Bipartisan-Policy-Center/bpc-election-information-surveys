@@ -129,7 +129,7 @@ def get_percents(data,codebook,q_codebook,question="BPC1",demo=None):
         # if all na
         if data[question].isnull().all():
             print(f"{question}: all NA values")
-            return
+            # return
     except:
         pass
 
@@ -163,23 +163,32 @@ def get_percents(data,codebook,q_codebook,question="BPC1",demo=None):
 
     elif matrix:
         for q in q_columns:
-            demo_results[demo_category_name][clean_key(q_codebook[q])] = get_percents_select_one_base(data,codebook,q)
+            if demo:
+                demo_results[demo_category_name][clean_key(q_codebook[q])] = get_percents_select_one_base(data,codebook,q)
+
+            else:
+                demo_results[clean_key(q_codebook[q])] = get_percents_select_one_base(data,codebook,q)
 
     else:
         demo_results["overall"] = get_percents_select_one_base(data,codebook,question)
 
-    
     #return pandas df
     if matrix: #format as multilevel index
-        flattened_dict = {
-            (age_group, question): results
-            for age_group, questions in demo_results.items()
-            for question, results in questions.items()
-        }
 
-        df = pd.DataFrame.from_dict(flattened_dict, orient='index').T
+        if demo:
+            flattened_dict = {
+                (dem_group, question): results
+                for dem_group, questions in demo_results.items()
+                for question, results in questions.items()
+            }
+
+            df = pd.DataFrame.from_dict(flattened_dict, orient='index')
+            
+            return df.sort_values(by=df.columns[0])
+
+        #if matrix but not demo
+        else:
+            return pd.DataFrame(demo_results).T
         
-        return(df.sort_values(by=df.columns[0]))
-
     else:
-        return pd.DataFrame(demo_results).sort_values(by='overall',ascending=False) #return 
+        return pd.DataFrame(demo_results).sort_values(by='overall',ascending=False)
