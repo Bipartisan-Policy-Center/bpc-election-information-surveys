@@ -351,68 +351,161 @@ Who do you think should be the most responsible for protecting users from false 
 
 ---
 
-## Section IV – Trust in 2024 Election
-
-### BPC19
-Do you agree or disagree with the following statement?  
-
-In the most recent election, I voted in, my voting experience was mostly positive.  
-[ROTATE]
-
-- Strongly agree
-- Somewhat agree
-- Somewhat disagree
-- Strongly disagree
-- Don’t know/ No opinion [ANCHOR]
+# SECTION IV – Trust in 2024 Election
 
 ---
 
-### BPC20a
-How confident are you that your vote in the November 2024 General Election will be counted as you intend?  
-[ROTATE]
+### BPC19
+Do you agree or disagree with the following statement?
 
-- Very confident
-- Somewhat confident
-- Not too confident
-- Not confident at all
-- Don’t know/ No opinion [ANCHOR]
+In the most recent election I voted in, my voting experience was mostly positive. [ROTATE]
+
+1. Strongly agree  
+2. Somewhat agree  
+3. Somewhat disagree  
+4. Strongly disagree  
+5. Don’t know/ No opinion [ANCHOR]
+
+---
+
+### [BLOCK I, SPLIT SAMPLE == A]
+
+### BPC20a
+How confident are you that your vote in the November 2024 General Election will be counted as you intend? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
 
 ---
 
 ### BPC21a
-How confident are you that your votes in your county or city will be counted as intended in the November 2024 General Election?  
-[ROTATE]
+How confident are you that your votes in your county or city will be counted as intended in the November 2024 General Election? [ROTATE]
 
-- Very confident
-- Somewhat confident
-- Not too confident
-- Not confident at all
-- Don’t know/ No opinion [ANCHOR]
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
 
 ---
 
 ### BPC22a
-How confident are you that votes in your state will be counted as intended in the November 2024 General Election?  
-[ROTATE]
+How confident are you that votes in your state will be counted as intended in the November 2024 General Election? [ROTATE]
 
-- Very confident
-- Somewhat confident
-- Not too confident
-- Not confident at all
-- Don’t know/ No opinion [ANCHOR]
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
 
 ---
 
 ### BPC23a
-How confident are you that votes nationwide will be counted as intended in the November 2024 General Election?  
-[ROTATE]
+How confident are you that votes nationwide will be counted as intended in the November 2024 General Election? [ROTATE]
 
-- Very confident
-- Somewhat confident
-- Not too confident
-- Not confident at all
-- Don’t know/ No opinion [ANCHOR]
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
 
+---
+
+### [BLOCK II] [SPLIT SAMPLE == B]
+
+### BPC23b
+How confident are you that votes nationwide will be counted as intended in the November 2024 General Election? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
+
+---
+
+### BPC22b
+How confident are you that votes in your state will be counted as intended in the November 2024 General Election? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
+
+---
+
+### BPC21b
+How confident are you that your votes in your county or city will be counted as intended in the November 2024 General Election? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
+
+---
+
+### BPC20b
+How confident are you that your vote in the November 2024 General Election will be counted as you intend? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
+
+---
+
+### [BLOCK III, SPLIT SAMPLE == C]
+
+### [RANDOMIZE BPC20c, BPC21c, BPC22c, BPC23c]
+
+### BPC20c
+How confident are you that your vote in the November 2024 General Election will be counted as you intend? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
+
+---
+
+### BPC21c
+How confident are you that your votes in your county or city will be counted as intended in the November 2024 General Election? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
+
+---
+
+### BPC22c
+How confident are you that votes in your state will be counted as intended in the November 2024 General Election? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
+
+---
+
+### BPC23c
+How confident are you that votes nationwide will be counted as intended in the November 2024 General Election? [ROTATE]
+
+1. Very confident  
+2. Somewhat confident  
+3. Not to confident  
+4. Not confident at all  
+5. Don’t know/ No opinion [ANCHOR]
+   
 ---
 
 ### BPC24
