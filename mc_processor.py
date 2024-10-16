@@ -182,7 +182,7 @@ def get_percents(data,codebook,q_codebook,question="BPC1",demo=None):
                 for question, results in questions.items()
             }
 
-            df = pd.DataFrame.from_dict(flattened_dict, orient='index')
+            df = pd.DataFrame.from_dict(flattened_dict, orient='index').T
             
             return df.sort_values(by=df.columns[0])
 
