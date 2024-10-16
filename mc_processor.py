@@ -192,3 +192,50 @@ def get_percents(data,codebook,q_codebook,question="BPC1",demo=None):
         
     else:
         return pd.DataFrame(demo_results).sort_values(by='overall',ascending=False)
+    
+
+
+def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,suppress_output=False):
+    """
+    Runs and displays results for a given question
+    """
+
+    #convert to string in case int given
+    survey_year = str(survey_year)
+
+    #print question text
+
+    if not suppress_output:
+        for key in q_codebook:
+            if key.startswith(question):
+                if '---' in q_codebook[key]:
+                    print(f"\n\n{question}: {q_codebook[key].split('---')[0]}")
+                    break
+                elif '\\\\' in q_codebook[key]:
+                    q_text = q_codebook[key].split('\\\\')[0]
+                    print(f"\n\n{question}: {q_text}")
+                    break
+                else:
+                    print(f"\n\n{question}: {q_codebook[key]}")
+
+    try:
+        # demo = None 
+        # demo="xpid3"
+        results = get_percents(data,codebook,q_codebook,question,demo) 
+
+        if demo:
+            # create demo directory
+            if not os.path.exists(f"{survey_year}/processed/{demo}"):
+                os.makedirs(f"{survey_year}/processed/{demo}")
+            # save to demo directory
+            results.to_csv(f"{survey_year}/processed/{demo}/{question}.csv")
+        else:
+            results.to_csv(f"{survey_year}/processed/{question}.csv")
+    
+        if not suppress_output:
+            display(results.style.format("{:.0%}"))
+
+        return results
+
+    except Exception as e:
+        print(f"*Issue with {question} {str(e)[:100]}\n")
