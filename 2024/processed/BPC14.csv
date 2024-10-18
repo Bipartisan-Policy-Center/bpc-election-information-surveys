@@ -1,11 +1,11 @@
 ,Very good thing,Somewhat good thing,Neither good nor bad thing,Somewhat bad thing,Very bad thing
-Voters using AI chatbots to find out information about a candidate or an issue on the ballot,0.08350437288985513,0.1700922709506285,0.3839997802591681,0.1587681001027788,0.2036354757975695
-Voters using AI chatbots to find out information about how to cast their ballot,0.09678030291888504,0.19000331578545082,0.38536293803876587,0.12570788142665143,0.2021455618302469
-Voters using AI chatbots to find information on how to register to vote,0.10628820478203208,0.22341780816400886,0.3656842274938524,0.11670868518395054,0.18790107437615616
-Voters using AI chatbots to decide which candidate to vote for,0.06363803265687698,0.11331551144281007,0.32799951487437506,0.16685785248012647,0.3281890885458114
-Voters using AI chatbots to learn about how candidates' positions align with their personal values and priorities,0.08838127486069673,0.1642674653304874,0.3933639776761182,0.15056826477912574,0.20341901735357193
-"Political campaigns using AI to create content, including advertisements for voters, without disclosing that AI was used in the process",0.054547456514867344,0.10317951611107176,0.33437326094835396,0.1929551672953184,0.3149445991303884
-"Political campaigns using AI to create content, including advertisements for voters, with clear disclosure that AI was used in the process",0.08730073733019729,0.16636035189871934,0.3858827854531191,0.14283962827988209,0.21761649703808214
-Candidates using AI to edit or touch-up photos or videos for their political advertisements,0.061220430802027985,0.1177721668021322,0.37623467125817056,0.1806173948130602,0.2641553363246089
-Candidates using AI to tailor their political advertisements to individual voters,0.06642543933033705,0.12665433414803257,0.3718649977713483,0.17728461528189102,0.25777061346839125
-Candidates using AI chatbots to answer voters' questions about campaigns,0.06700720775794766,0.1522240934898095,0.3504559556168714,0.17718791118559504,0.2531248319497765
+Voters using AI chatbots to find out information about a candidate or an issue on the ballot,0.09277969117959149,0.19263771985500966,0.33537487197419075,0.16891438888785085,0.21029332810335724
+Voters using AI chatbots to find out information about how to cast their ballot,0.11246755819632989,0.19461451372852728,0.326519866021898,0.153234585651575,0.21316347640166988
+Voters using AI chatbots to find information on how to register to vote,0.13367025475916527,0.23263920520025835,0.32713875591067654,0.128598120173235,0.17795366395666484
+Voters using AI chatbots to decide which candidate to vote for,0.06117968062339048,0.12234084866742627,0.2717679140389054,0.19038491885946968,0.3543266378108082
+Voters using AI chatbots to learn about how candidates' positions align with their personal values and priorities,0.09295825895760382,0.19828201945313426,0.3473136213626659,0.15656462113065103,0.204881479095945
+"Political campaigns using AI to create content, including advertisements for voters, without disclosing that AI was used in the process",0.0592864246061983,0.1093016587715928,0.2681304743237022,0.20421061355038844,0.35907082874811835
+"Political campaigns using AI to create content, including advertisements for voters, with clear disclosure that AI was used in the process",0.09905223310011115,0.1872992052364734,0.3260811956924375,0.1568709276971892,0.2306964382737887
+Candidates using AI to edit or touch-up photos or videos for their political advertisements,0.06031293731357321,0.11484558235102035,0.32127185827241816,0.20196019909056398,0.3016094229724243
+Candidates using AI to tailor their political advertisements to individual voters,0.06941928917874812,0.14121477294824727,0.342804722918912,0.17948403112190547,0.26707718383218726
+Candidates using AI chatbots to answer voters' questions about campaigns,0.07961513918967769,0.14175098462004143,0.3168648949675578,0.19400868020255335,0.2677603010201697
