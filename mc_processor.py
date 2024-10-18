@@ -243,9 +243,10 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
 
 ### IGNORE SPLIT SAMPLE
 
-def get_confidence_results(data,codebook,q_codebook,question_number = 20):
+def get_confidence_results(data,codebook,q_codebook,question_number = 20,suppress_output=False):
 
-    print(f"BPC{question_number}",q_codebook[f"BPC{question_number}a"])
+    if not suppress_output:
+        print(f"BPC{question_number}",q_codebook[f"BPC{question_number}a"])
 
     question = f"joined_column_BPC{question_number}"
     cols = data.filter(regex=f'^BPC{question_number}').columns
@@ -262,7 +263,7 @@ def get_confidence_results(data,codebook,q_codebook,question_number = 20):
     results.index = new_index
     return(results)
     
-def run_confidence(data,codebook,q_codebook,question_number,demo=None):
+def run_confidence(data,codebook,q_codebook,question_number,demo=None,suppress_output=False):
 
     demo_results = {}
 
@@ -272,9 +273,9 @@ def run_confidence(data,codebook,q_codebook,question_number,demo=None):
             #lookup demo name
             demo_category_name = get_name_from_codebook(codebook,demo,demo_group[0])
             
-            demo_results[demo_category_name] = get_confidence_results(group_data,codebook,question_number)
+            demo_results[demo_category_name] = get_confidence_results(group_data,codebook,question_number,suppress_output)
 
 
-    demo_results["overall"] = get_confidence_results(data,codebook,q_codebook,question_number)
+    demo_results["overall"] = get_confidence_results(data,codebook,q_codebook,question_number,suppress_output)
 
     return pd.DataFrame(demo_results).sort_values(by='overall',ascending=False)
