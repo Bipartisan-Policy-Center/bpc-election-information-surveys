@@ -223,14 +223,14 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
         # demo="xpid3"
         results = get_percents(data,codebook,q_codebook,question,demo) 
 
-        if demo:
-            # create demo directory
-            if not os.path.exists(f"{survey_year}/processed/{demo}"):
-                os.makedirs(f"{survey_year}/processed/{demo}")
-            # save to demo directory
-            results.to_csv(f"{survey_year}/processed/{demo}/{question}.csv")
-        else:
-            results.to_csv(f"{survey_year}/processed/{question}.csv")
+        # if demo:
+        #     # create demo directory
+        #     if not os.path.exists(f"{survey_year}/processed/{demo}"):
+        #         os.makedirs(f"{survey_year}/processed/{demo}")
+        #     # save to demo directory
+        #     results.to_csv(f"{survey_year}/processed/{demo}/{question}.csv")
+        # else:
+        #     results.to_csv(f"{survey_year}/processed/{question}.csv")
     
         if not suppress_output:
             display(results.style.format("{:.0%}"))
