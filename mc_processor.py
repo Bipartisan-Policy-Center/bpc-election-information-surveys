@@ -1,9 +1,11 @@
 import pandas as pd
+import visualizing
 
-def weighted_counts(x):
+# commenting because not used?
+# def weighted_counts(x):
     # x is a DataFrame of grouped values including the 'wts' column for weights
-    total_weight = x['wts'].sum()
-    return total_weight
+    # total_weight = x['wts'].sum()
+    # return total_weight
 
 # def map_scaled_responses(df,column_name):
 #     """
@@ -184,15 +186,31 @@ def get_percents(data,codebook,q_codebook,question="BPC1",demo=None):
 
             df = pd.DataFrame.from_dict(flattened_dict, orient='index').T
             
-            return df.sort_values(by=df.columns[0])
+            return df #.sort_values(by=df.columns[0])
 
         #if matrix but not demo
         else:
             return pd.DataFrame(demo_results).T
         
     else:
-        return pd.DataFrame(demo_results).sort_values(by='overall',ascending=False)
+        return pd.DataFrame(demo_results) #.sort_values(by='overall',ascending=False)
     
+def get_question_text(q_codebook, question):
+    question_text = q_codebook[[i for i in q_codebook if i.startswith(question)][0]]
+    if '---' in question_text:
+        question_text = question_text.split('---')[0]
+    elif '\\\\' in question_text:
+        question_text = question_text.split('\\\\')[0]
+    return question_text
+
+def get_parallel_questions(data, codebook, q_codebook, questions, survey_year, demo=None):
+    dfs = []
+    for question in questions:
+        question_text = get_question_text(q_codebook, question)
+        df = run_and_display(data,codebook,q_codebook,question,survey_year,demo,suppress_output=True)
+        df.columns = [question_text]
+        dfs.append(df)
+    return pd.concat(dfs, axis=1)
 
 
 def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,suppress_output=False):
@@ -203,25 +221,9 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
     #convert to string in case int given
     survey_year = str(survey_year)
 
-    #print question text
-
-    if not suppress_output:
-        for key in q_codebook:
-            if key.startswith(question):
-                if '---' in q_codebook[key]:
-                    print(f"\n\n{question}: {q_codebook[key].split('---')[0]}")
-                    break
-                elif '\\\\' in q_codebook[key]:
-                    q_text = q_codebook[key].split('\\\\')[0]
-                    print(f"\n\n{question}: {q_text}")
-                    break
-                else:
-                    print(f"\n\n{question}: {q_codebook[key]}")
-
     try:
         # demo = None 
         # demo="xpid3"
-        results = get_percents(data,codebook,q_codebook,question,demo) 
 
         # if demo:
         #     # create demo directory
@@ -231,9 +233,12 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
         #     results.to_csv(f"{survey_year}/processed/{demo}/{question}.csv")
         # else:
         #     results.to_csv(f"{survey_year}/processed/{question}.csv")
+
+        results = get_percents(data,codebook,q_codebook,question,demo) 
     
         if not suppress_output:
-            display(results.style.format("{:.0%}"))
+            question_text = get_question_text(q_codebook, question)
+            visualizing.plot_question(results, question, question_text)
 
         return results
 

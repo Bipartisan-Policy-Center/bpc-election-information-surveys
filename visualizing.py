@@ -1,7 +1,10 @@
 
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mtick
+
 import numpy as np
 import pandas as pd
+import matplotlib.patheffects as pe
 
 colors = {
     "very_confident": "#2E4465",
@@ -143,3 +146,56 @@ def plot_split_sample(all_dfs, q_codebook):
 
     # Display the plot
     plt.show()
+
+
+
+
+def plot_question(df, question, question_text):
+    # this should handle most of our plots
+    # it could eventually be used to plot the confidence questions
+    # current problems that could be fixed some day: bar/group spacing, colors.
+
+    matrix = len(df.columns) > 1
+    sums_to_1 = all(abs(df.sum(axis=1) - 1) < 0.1)
+    legend = False
+    stacked = False
+    # tall = False
+    if matrix:
+        legend = True
+        if sums_to_1:
+            stacked = True
+
+    if matrix and not stacked:
+        height = len(df)
+    else:
+        height = len(df) * 0.5
+
+    ax = df.plot(kind='barh', stacked=stacked, figsize=(10, height), title=f"{question}: {question_text}", legend=legend)
+    ax.invert_yaxis()
+    
+    if stacked:
+        ax.set_xlim([0, 1])
+    
+    if legend:
+        ax.legend(bbox_to_anchor=(0, -.08), loc='upper left')
+
+    for i, patch in enumerate(ax.patches):
+        # Find the width and position of each bar segment
+        width = patch.get_width()
+        if stacked:
+            x = patch.get_x() + width / 2
+        else:
+            xlim = ax.get_xlim()
+            x = (xlim[1] - xlim[0]) * 0.05
+        y = patch.get_y() + patch.get_height() / 2
+        
+        # Annotate the bar with the percentage (multiply by 100 and round for display)
+        ax.annotate(f'{width * 100:.0f}%', (x, y), ha='center', va='center',
+                    color='white',
+                    path_effects=[pe.withStroke(linewidth=1, foreground="gray")])
+
+    ax.xaxis.set_major_formatter(mtick.PercentFormatter(xmax=1, decimals=0))  # xmax=1 because your data is in proportion (0 to 1)
+
+    plt.show()
+
+    return ax
