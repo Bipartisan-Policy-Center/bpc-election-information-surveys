@@ -193,7 +193,7 @@ def get_percents(data,codebook,q_codebook,question="BPC1",demo=None):
             return pd.DataFrame(demo_results).T
         
     else:
-        return pd.DataFrame(demo_results) #.sort_values(by='overall',ascending=False)
+        return pd.DataFrame(demo_results) #.sort_values(by='overall'
     
 def get_question_text(q_codebook, question):
     question_text = q_codebook[[i for i in q_codebook if i.startswith(question)][0]]
@@ -210,7 +210,10 @@ def get_parallel_questions(data, codebook, q_codebook, questions, survey_year, d
         df = run_and_display(data,codebook,q_codebook,question,survey_year,demo,suppress_output=True)
         df.columns = [question_text]
         dfs.append(df)
-    return pd.concat(dfs, axis=1)
+
+    df = pd.concat(dfs, axis=1)
+    
+    return df
 
 
 def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,suppress_output=False):
@@ -234,7 +237,8 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
         # else:
         #     results.to_csv(f"{survey_year}/processed/{question}.csv")
 
-        results = get_percents(data,codebook,q_codebook,question,demo) 
+        results = get_percents(data,codebook,q_codebook,question,demo)
+        # results = results.sort_values(by=df.columns[0])
     
         if not suppress_output:
             question_text = get_question_text(q_codebook, question)

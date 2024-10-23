@@ -15,6 +15,8 @@ colors = {
 }
 
 def plot_overall_confidence(df):
+
+
     # Extract the data from df
     categories = df.columns  # The different vote levels
     # confidence_levels = df.index  # The confidence categories
@@ -154,6 +156,9 @@ def plot_question(df, question, question_text):
     # this should handle most of our plots
     # it could eventually be used to plot the confidence questions
     # current problems that could be fixed some day: bar/group spacing, colors.
+
+    df = df.sort_values(by=df.columns[0],ascending=False)
+
 
     matrix = len(df.columns) > 1
     sums_to_1 = all(abs(df.sum(axis=1) - 1) < 0.1)
