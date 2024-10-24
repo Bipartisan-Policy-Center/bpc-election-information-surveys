@@ -252,39 +252,49 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
 
 ### IGNORE SPLIT SAMPLE
 
-def get_confidence_results(data,codebook,q_codebook,question_number = 20,suppress_output=False):
-
+def get_confidence_results(data, codebook, q_codebook, question_number=20, demo=None, suppress_output=False):
     if not suppress_output:
-        print(f"BPC{question_number}",q_codebook[f"BPC{question_number}a"])
-
+        print(f"BPC{question_number}", q_codebook[f"BPC{question_number}a"])
     question = f"joined_column_BPC{question_number}"
     cols = data.filter(regex=f'^BPC{question_number}').columns
     data[question] = data[cols].bfill(axis=1).iloc[:, 0]
 
-    numerators = data.groupby(question).apply(lambda x: x['wts'].sum())
-    denominator = numerators.sum()
-
-    results = numerators/denominator
-    new_index = []
-    for index in results.index:
-        new_index.append(get_name_from_codebook(codebook,f"BPC{question_number}a",index))
-
-    results.index = new_index
-    return(results)
-    
-def run_confidence(data,codebook,q_codebook,question_number,demo=None,suppress_output=False):
-
     demo_results = {}
 
-    #if demo provided
     if demo:
         for demo_group, group_data in data.groupby([demo]):
-            #lookup demo name
-            demo_category_name = get_name_from_codebook(codebook,demo,demo_group[0])
+            demo_category_name = get_name_from_codebook(codebook, demo, demo_group)
+            numerators = group_data.groupby(question).apply(lambda x: x['wts'].sum())
+            denominator = numerators.sum()
+            results = numerators / denominator
+            new_index = [get_name_from_codebook(codebook, f"BPC{question_number}a", index) for index in results.index]
+            results.index = new_index
+            demo_results[demo_category_name] = results
+
+    numerators = data.groupby(question).apply(lambda x: x['wts'].sum())
+    denominator = numerators.sum()
+    results = numerators / denominator
+    new_index = [get_name_from_codebook(codebook, f"BPC{question_number}a", index) for index in results.index]
+    results.index = new_index
+    demo_results["overall"] = results
+
+    return pd.DataFrame(demo_results) #.sort_values(by='overall', ascending=False)
+    
+# def run_confidence(data,codebook,q_codebook,question_number,demo=None,suppress_output=False):
+
+#     ### SOME ISSUES HERE W DEMOS
+
+#     demo_results = {}
+
+#     #if demo provided
+#     if demo:
+#         for demo_group, group_data in data.groupby([demo]):
+#             #lookup demo name
+#             demo_category_name = get_name_from_codebook(codebook,demo,demo_group[0])
             
-            demo_results[demo_category_name] = get_confidence_results(group_data,codebook,question_number,suppress_output)
+#             demo_results[demo_category_name] = get_confidence_results(group_data,codebook,q_codebook,question_number,demo,suppress_output)
 
 
-    demo_results["overall"] = get_confidence_results(data,codebook,q_codebook,question_number,suppress_output)
+#     demo_results["overall"] = get_confidence_results(data,codebook,q_codebook,question_number,demo,suppress_output)
 
-    return pd.DataFrame(demo_results).sort_values(by='overall',ascending=False)
+#     return pd.DataFrame(demo_results) #.sort_values(by='overall',ascending=False)
