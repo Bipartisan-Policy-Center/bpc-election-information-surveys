@@ -11,6 +11,8 @@ import seaborn as sns
 import os
 from matplotlib.ticker import FuncFormatter
 
+
+
 colors = {
     "very_confident": "#2E4465",
     "somewhat_confident": "#3C608A",
@@ -327,21 +329,20 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title):
 
     fig, ax = plt.subplots(figsize=(10, n*.7))
 
-
     sns.set_style('ticks')
 
     fe = font_manager.FontEntry(
-        fname='/Users/will/Library/Fonts/StyreneA-Black.otf',
+        fname='fonts/StyreneA-Black.otf',
         name='StyreneABlack')
     font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
 
     fe = font_manager.FontEntry(
-        fname='/Users/will/Library/Fonts/StyreneA-Medium.otf',
+        fname='fonts/StyreneA-Medium.otf',
         name='StyreneAMedium')
     font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
 
     fe = font_manager.FontEntry(
-        fname='/Users/will/Library/Fonts/StyreneA-Regular.otf',
+        fname='fonts/StyreneA-Regular.otf',
         name='StyreneARegular')
     font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
 
