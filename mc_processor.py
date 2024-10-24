@@ -188,7 +188,7 @@ def get_parallel_questions(data, codebook, q_codebook, questions, survey_year, d
     return df
 
 
-def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,suppress_output=False):
+def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,suppress_output=False, sort=True):
     """
     Runs and displays results for a given question
     """
@@ -198,7 +198,8 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
 
     try:
         results = get_percents(data,codebook,q_codebook,question,demo)
-        results = results.sort_values(by=results.columns[0])
+        if sort:
+            results = results.sort_values(by=results.columns[0])
 
         if demo:
             # create demo directory
