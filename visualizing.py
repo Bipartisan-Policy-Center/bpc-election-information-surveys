@@ -5,6 +5,10 @@ import matplotlib.ticker as mtick
 import numpy as np
 import pandas as pd
 import matplotlib.patheffects as pe
+from matplotlib import font_manager
+import seaborn as sns
+import os
+from matplotlib.ticker import FuncFormatter
 
 colors = {
     "very_confident": "#2E4465",
@@ -204,3 +208,115 @@ def plot_question(df, question, question_text):
     plt.show()
 
     return ax
+
+
+def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel):
+
+    categories = df.index
+    n = len(categories)
+
+    fig, ax = plt.subplots(figsize=(10, n*.9))
+
+    # Plot style settings
+    delta = 0.15 # Spacing between categories
+    ms = 8  # Marker size
+    x_label_offset = 0.3
+    y_text_offset = 0.002  # Single vertical offset for all labels (above the points)
+    y_label_offset = 0.07  # Offset for year labels
+    label_fontsize = 10
+
+    # Colors and fonts
+    bpc_darkgray = '#333638'
+    color1 = '#3687e7'  # Color for start
+    color2 = '#3C608A'  # Color for end
+    fontname = 'StyreneAMedium'  # Custom font name
+
+    sns.set_style('ticks')
+    
+    ## LOAD FONTS
+    font_dir = os.path.join(os.getcwd(), 'fonts')
+
+    fe_black = font_manager.FontEntry(
+        fname=os.path.join(font_dir, 'StyreneA-Black.otf'),
+        name='StyreneABlack'
+    )
+    font_manager.fontManager.ttflist.insert(0, fe_black)
+
+    fe_medium = font_manager.FontEntry(
+        fname=os.path.join(font_dir, 'StyreneA-Medium.otf'),
+        name='StyreneAMedium'
+    )
+    font_manager.fontManager.ttflist.insert(0, fe_medium)
+
+    fe_regular = font_manager.FontEntry(
+        fname=os.path.join(font_dir, 'StyreneA-Regular.otf'),
+        name='StyreneARegular'
+    )
+    font_manager.fontManager.ttflist.insert(0, fe_regular)
+
+    plt.rcParams['font.family'] = 'StyreneAMedium'
+    plt.rcParams['font.sans-serif'] = ['StyreneAMedium']
+
+
+    # Loop through categories and plot start and end
+    for j, category in enumerate(categories):
+        start = df[df.columns[0]].loc[category] * 100  # Convert to percentage
+        end = df[df.columns[1]].loc[category] * 100  # Convert to percentage
+        
+        if j != 0:
+            ax.axhline(y=delta * (j + 0.5), color='#eee', linewidth= .7, zorder=0)  # horizontal line for visual clarity
+
+        start_label = f'{int(round(start, 0))}%'
+        end_label = f'{int(round(end, 0))}%'
+
+        if end == start:
+            # No change, plot single point
+            ha1 = 'right'
+            ha2 = 'left'
+            ax.plot(end, delta * j, 'o', color=color1, zorder=100, markersize=ms)  # Use color1 for both years since no change
+            ax.text(end + x_label_offset, delta * j + y_text_offset, end_label, ha=ha2, va='center', color=bpc_darkgray, fontsize=label_fontsize, fontname=fontname)
+        else:
+            # Plot arrow from start to end
+            sign = 1 if end > start else -1  # Arrow direction
+            arrow_color = 'green' if end > start else 'red'  # Green for positive change, red for negative
+            ax.arrow(start, delta * j , end - start - sign * x_label_offset - (.9*sign), 0, 
+                    head_width=0.025, head_length=0.8, fc=arrow_color, ec=arrow_color, 
+                    width=0.005, length_includes_head=True, zorder=100)
+
+            # Plot the start and end points
+            ax.plot(start, delta * j, 'o', color=color1, zorder=100, markersize=ms)  # start
+            ax.plot(end, delta * j, 'o', color=color2, zorder=100, markersize=ms, clip_on=False)  # end
+
+            # Adjust labels for start and end points (both just above the data point)
+            start_alignment = 'left' if start > end else 'right'
+            end_alignment = 'right' if start > end else 'left'
+
+            ax.text(start - 1.5*sign, delta * j + y_text_offset, start_label, ha=start_alignment , va='center', color=bpc_darkgray, fontsize=label_fontsize, fontname=fontname)
+            ax.text(end + 1.5*sign, delta * j + y_text_offset, end_label, ha=end_alignment, va='center', color=bpc_darkgray, fontsize=label_fontsize, fontname=fontname)
+
+        # Add year labels for the first entry
+        if j == 0:
+            ax.text(start, -y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=label_fontsize+1, fontname=fontname)
+            ax.text(end, -y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=label_fontsize+1, fontname=fontname)
+            
+            ax.plot([start, start], [-y_label_offset * .35, -y_label_offset * .6], color=color1, zorder=0)
+            ax.plot([end, end], [-y_label_offset * .35, -y_label_offset * .6], color=color2, zorder=0)
+
+    ax.set_yticks(np.arange(n) * delta)
+    ax.set_yticklabels(categories, fontsize=label_fontsize, fontname=fontname, color=bpc_darkgray)
+    ax.set_xlim([0,100])
+        
+    ax.invert_yaxis()
+
+    ax.set_xlabel(xlabel,fontname="StyreneABlack",fontsize=11)
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{int(x)}%'))
+    ax.xaxis.labelpad = 8
+    # ax.set_title(title,pad=30,fontname="StyreneABlack",fontsize=12)
+    ax.grid(False)
+    sns.despine()
+
+    plt.savefig(f'{file_name}.png', format='png', dpi=300, bbox_inches='tight')
+
+    # Show plot
+    plt.show()
+
