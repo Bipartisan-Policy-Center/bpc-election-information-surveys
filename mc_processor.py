@@ -1,34 +1,6 @@
 import pandas as pd
 import visualizing
-
-# commenting because not used?
-# def weighted_counts(x):
-    # x is a DataFrame of grouped values including the 'wts' column for weights
-    # total_weight = x['wts'].sum()
-    # return total_weight
-
-# def map_scaled_responses(df,column_name):
-#     """
-#     replaces responses in a dataframe column with the version specified in response_mapping
-#     """
-#     response_mapping = {
-#         'Very concerned': 'Concerned',
-#         'Somewhat concerned': 'Concerned',
-#         'Not too concerned': 'Not Concerned',
-#         'Not at all concerned': 'Not Concerned',
-#         "Don't know/No opinion": "Don't know/No opinion",
-#         'Very important': 'Important',
-#         'Somewhat important': 'Important',
-#         'Not too important': 'Not important',
-#         'Not at all important': 'Not important',
-#         "Far too little":"Too little",
-#         "Far too much":"Too much"        
-#     }
-
-#     # if not df[column_name].str.lower().str.contains("confident").any(): #if Response values don't include "confident"
-#         # Apply the mapping to collapse response categories
-#     df[column_name] = df[column_name].map(response_mapping)
-#     return df
+import os
 
 def clean_key(key_name):
     try:
@@ -193,7 +165,7 @@ def get_percents(data,codebook,q_codebook,question="BPC1",demo=None):
             return pd.DataFrame(demo_results).T
         
     else:
-        return pd.DataFrame(demo_results) #.sort_values(by='overall'
+        return pd.DataFrame(demo_results) #.sort_values(by='overall')
     
 def get_question_text(q_codebook, question):
     question_text = q_codebook[[i for i in q_codebook if i.startswith(question)][0]]
@@ -225,21 +197,18 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
     survey_year = str(survey_year)
 
     try:
-        # demo = None 
-        # demo="xpid3"
-
-        # if demo:
-        #     # create demo directory
-        #     if not os.path.exists(f"{survey_year}/processed/{demo}"):
-        #         os.makedirs(f"{survey_year}/processed/{demo}")
-        #     # save to demo directory
-        #     results.to_csv(f"{survey_year}/processed/{demo}/{question}.csv")
-        # else:
-        #     results.to_csv(f"{survey_year}/processed/{question}.csv")
-
         results = get_percents(data,codebook,q_codebook,question,demo)
-        # results = results.sort_values(by=df.columns[0])
-    
+        results = results.sort_values(by=results.columns[0])
+
+        if demo:
+            # create demo directory
+            if not os.path.exists(f"{survey_year}/processed/{demo}"):
+                os.makedirs(f"{survey_year}/processed/{demo}")
+            # save to demo directory
+            results.to_csv(f"{survey_year}/processed/{demo}/{question}.csv")
+        else:
+            results.to_csv(f"{survey_year}/processed/{question}.csv")
+
         if not suppress_output:
             question_text = get_question_text(q_codebook, question)
             visualizing.plot_question(results, question, question_text)
@@ -278,7 +247,7 @@ def get_confidence_results(data, codebook, q_codebook, question_number=20, demo=
     results.index = new_index
     demo_results["overall"] = results
 
-    return pd.DataFrame(demo_results) #.sort_values(by='overall', ascending=False)
+    return pd.DataFrame(demo_results).sort_values(by='overall', ascending=False)
     
 # def run_confidence(data,codebook,q_codebook,question_number,demo=None,suppress_output=False):
 
