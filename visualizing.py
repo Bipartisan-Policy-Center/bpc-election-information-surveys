@@ -4,6 +4,7 @@ import matplotlib.ticker as mtick
 
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.patheffects as pe
 from matplotlib import font_manager
 import seaborn as sns
@@ -263,8 +264,8 @@ def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel):
         start = df[df.columns[0]].loc[category] * 100  # Convert to percentage
         end = df[df.columns[1]].loc[category] * 100  # Convert to percentage
         
-        if j != 0:
-            ax.axhline(y=delta * (j + 0.5), color='#eee', linewidth= .7, zorder=0)  # horizontal line for visual clarity
+        # if j != 0:
+            # ax.axhline(y=delta * (j + 0.5), color='#eee', linewidth= .7, zorder=0)  # horizontal line for visual clarity
 
         start_label = f'{int(round(start, 0))}%'
         end_label = f'{int(round(end, 0))}%'
@@ -320,3 +321,142 @@ def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel):
     # Show plot
     plt.show()
 
+def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title):
+    categories = df.index
+    n = len(categories)
+
+    fig, ax = plt.subplots(figsize=(10, n*.7))
+
+
+    sns.set_style('ticks')
+
+    fe = font_manager.FontEntry(
+        fname='/Users/will/Library/Fonts/StyreneA-Black.otf',
+        name='StyreneABlack')
+    font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
+
+    fe = font_manager.FontEntry(
+        fname='/Users/will/Library/Fonts/StyreneA-Medium.otf',
+        name='StyreneAMedium')
+    font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
+
+    fe = font_manager.FontEntry(
+        fname='/Users/will/Library/Fonts/StyreneA-Regular.otf',
+        name='StyreneARegular')
+    font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
+
+    matplotlib.rcParams['font.family'] = 'StyreneARegular' # = 'your custom ttf font name'
+
+
+    delta = 0.2
+    y = np.linspace(-delta, delta, n)
+    # colors = ['blue', 'green', 'red']
+    # colors = ['#3C608A', '#3C608A', '#3C608A']
+    blue = '#3C608A'
+    lightgray = '#d3d8d6'
+    bpc_darkgray = '#333638'
+    red = '#e43e47'
+    lightblue = '#3687e7'
+
+    color2 = blue
+    color1 = lightblue
+
+
+    x_label_offset = 0.015
+    y_label_offset = -0.13
+
+    ms = 5 # markersize
+
+    ylabel_fontsize = 12
+    xlabel_fontsize = 12
+    data_label_fontsize = 11
+    xtick_label_fontsize = 11
+    title_fontsize = 13
+    head_width=0.035
+    head_length=0.01
+
+    for j, category in enumerate(categories):
+        start = df[df.columns[0]].loc[category]
+        end = df[df.columns[1]].loc[category]
+
+
+        # OPTION 1 arrows
+        ax.arrow(start, y[j], end - start-.01, 0, 
+                head_width=head_width, head_length=head_length, fc=color1, ec=color1,
+                width=.01,
+                overhang=0, length_includes_head=True, zorder=100)
+                # Add starting dot
+        ax.plot(start, y[j], 'o', color=color1, zorder=100, markersize=ms)
+
+
+        # OPTION 2 lines
+        # # Draw line connecting 2022 and 2024
+        # ax.plot([start, end], [y[j], y[j]], color=colors[j], zorder=99)
+
+        # # Add empty dot for 2022
+        # ax.plot(start, y[j], 'o', color=blue, markerfacecolor='white', zorder=100, clip_on=False)
+        # ax.plot(start, y[j], 'o', color=color1, zorder=100, markersize=ms, clip_on=False)
+        
+        # # Add filled dot for 2024
+        ax.plot(end, y[j], 'o', color=color2, zorder=100, markersize=ms, clip_on=False)
+
+        percent_marker = '%' if j == 0 else ''
+        start_label = f'{round(start * 100)}{percent_marker}'
+        end_label = f'{round(end * 100)}{percent_marker}'
+        ax.text(start - x_label_offset, y[j], start_label, ha='right', va='center', color=bpc_darkgray, fontsize=data_label_fontsize)
+        ax.text(end + x_label_offset, y[j], end_label, ha='left', va='center', color=bpc_darkgray, fontsize=data_label_fontsize)
+
+
+        if j == 0:
+            # ax.text(start - h_label_offset, y[j], "'22", ha='right', va='center', color='black')
+            # ax.text(end + h_label_offset, y[j], "'24", ha='left', va='center', color='black')
+            ax.text(start, y[j]+ y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=data_label_fontsize, fontname='StyreneAMedium')
+            ax.text(end, y[j]+ y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=data_label_fontsize, fontname='StyreneAMedium')
+            
+            ax.plot([start, start], [y[j]+y_label_offset*.3, y[j]+y_label_offset*.7], color=color1, zorder=0)
+            ax.plot([end, end], [y[j]+y_label_offset*.3, y[j]+y_label_offset*.7], color=color2, zorder=0)
+
+
+    # # Setting the y-axis labels
+    ax.set_yticks(y)
+    ax.set_yticklabels(categories, fontsize=ylabel_fontsize, fontname='StyreneAMedium', color=bpc_darkgray)
+
+    # ax.set_yticklabels(['All jurisdictions', 'County-equivalents', '20 most populous\ncounties'],
+    #                 fontname='StyreneAMedium', color=darkgray, fontsize=11.5)
+    ax.set_ylim([delta*1.5, -delta*2])
+    ax.grid(False)
+
+
+    # # Setting the x-axis label
+    ax.set_xlabel(xlabel, fontsize=xlabel_fontsize, fontname='StyreneAMedium')
+    ax.set_xlim([0, 1])
+    # ax.set_xticks(np.linspace(0, 1, 11))
+    # ax.set_xticklabels([f'{i}%' for i in range(0, 101, 10)], fontsize=label_fontsize)
+    ax.set_xticks(np.linspace(0, 1, 5))
+    ax.set_xticklabels(['0%', '25%', '50%', '75%', '100%'], fontsize=xtick_label_fontsize)
+    # ax.set_xticks(np.linspace(0, 1, 2))
+    # ax.set_xticklabels(["0%", "100%"])
+    sns.despine(left=True)
+
+    # Remove y-axis
+    # ax.yaxis.set_visible(False)
+    ax.tick_params(axis='y', length=0)
+    
+    
+    ax.spines['bottom'].set_color(bpc_darkgray)
+    ax.spines['bottom'].set_linewidth(1)
+    ax.tick_params(axis='x', color=bpc_darkgray, width=1)
+
+    # # Remove grid lines
+    ax.grid(False)
+
+    # # Remove the background
+    ax.set_facecolor('white')
+    
+
+    # # Display the plot
+    plt.title(title, fontname='StyreneABlack', fontsize=title_fontsize)
+
+    plt.savefig(f'{file_name}', dpi=300, bbox_inches='tight')
+
+    plt.show()
