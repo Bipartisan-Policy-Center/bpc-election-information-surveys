@@ -213,7 +213,7 @@ def plot_question(df, question, question_text, sort=True):
 
     return ax
 
-def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title):
+def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title = None,plot_type=None):
     categories = df.index
     n = len(categories)
 
@@ -249,8 +249,8 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title):
     red = '#e43e47'
     lightblue = '#3687e7'
 
+    color1 = red if start_tick_title == "Republicans" else lightblue 
     color2 = blue
-    color1 = lightblue
 
 
     x_label_offset = 0.015
@@ -267,28 +267,24 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title):
     head_length=0.01
 
     for j, category in enumerate(categories):
+
         start = df[df.columns[0]].loc[category]
         end = df[df.columns[1]].loc[category]
 
-
-        # OPTION 1 arrows
-        ax.arrow(start, y[j], end - start-.01, 0, 
-                head_width=head_width, head_length=head_length, fc=color1, ec=color1,
-                width=.01,
-                overhang=0, length_includes_head=True, zorder=100)
-                # Add starting dot
+        if plot_type:
+            # lines (not arrow)
+            ax.plot([start, end], [y[j], y[j]], color=lightgray, zorder=2, linewidth=4)
+        else:
+            # arrows
+            ax.arrow(start, y[j], end - start-.01, 0, 
+                    head_width=head_width, head_length=head_length, fc=color1, ec=color1,
+                    width=.01,
+                    overhang=0, length_includes_head=True, zorder=100)
+            
+        # Add starting dot
         ax.plot(start, y[j], 'o', color=color1, zorder=100, markersize=ms)
 
-
-        # OPTION 2 lines
-        # # Draw line connecting 2022 and 2024
-        # ax.plot([start, end], [y[j], y[j]], color=colors[j], zorder=99)
-
-        # # Add empty dot for 2022
-        # ax.plot(start, y[j], 'o', color=blue, markerfacecolor='white', zorder=100, clip_on=False)
-        # ax.plot(start, y[j], 'o', color=color1, zorder=100, markersize=ms, clip_on=False)
-        
-        # # Add filled dot for 2024
+        # Add end dot
         ax.plot(end, y[j], 'o', color=color2, zorder=100, markersize=ms, clip_on=False)
 
         percent_marker = '%' if j == 0 else ''
@@ -343,150 +339,10 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title):
 
     # # Remove the background
     ax.set_facecolor('white')
-    
 
     # # Display the plot
     # plt.title(title, fontname='StyreneABlack', fontsize=title_fontsize)
 
     plt.savefig(f'{file_name}', dpi=300, bbox_inches='tight')
 
-    plt.show()
-
-def xpid_dotplot(res,xlabel,file_name,min_x_value = None, max_x_value = None):
-
-    # Define your custom fonts
-    fe = font_manager.FontEntry(fname='fonts/StyreneA-Black.otf', name='StyreneABlack')
-    font_manager.fontManager.ttflist.insert(0, fe) 
-
-    fe = font_manager.FontEntry(fname='fonts/StyreneA-Medium.otf', name='StyreneAMedium')
-    font_manager.fontManager.ttflist.insert(0, fe) 
-
-    fe = font_manager.FontEntry(fname='fonts/StyreneA-Regular.otf', name='StyreneARegular')
-    font_manager.fontManager.ttflist.insert(0, fe)
-
-    plt.rcParams['font.family'] = 'StyreneARegular'
-
-    # Define custom colors
-    blue = '#3C608A'
-    bpc_darkgray = '#333638'
-    red = '#e43e47'
-    lightgray = '#d3d8d6'
-
-    # font sizes
-    ylabel_fontsize = 12
-    xlabel_fontsize = 12
-    data_label_fontsize = 11
-    xtick_label_fontsize = 11
-    y_label_offset = -.5
-
-    n = len(res.columns)
-
-    # Prepare the plot
-    fig, ax = plt.subplots(figsize=(12, n * 0.7))
-
-    # Add vertical padding between x-axis and y-axis levels
-    plt.gca().margins(y=0.2)  # Adjust the y value for more or less space
-
-    # Extract the columns and rows
-    levels = res.columns.tolist()  # This will be on the y-axis (Your vote, etc.)
-    dem = res.loc['PID: Dem (no lean)']
-    overall = res.loc['overall']
-    rep = res.loc['PID: Rep (no lean)']
-
-    # Determine x-axis limits based on the data range
-    min_value = min(dem.min(), overall.min(), rep.min())*100 if min_x_value is None else min_x_value
-    min_value = 0 if min_value < 0 else min_value
-    max_value = max(dem.max(), overall.max(), rep.max())*100 if not max_x_value else max_x_value
-    max_value = 100 if max_value > 100 else max_value
-
-    # xlabel offset dependent on axes
-    x_label_offset = 5 * (min(max_value,100)/100)
-
-    # Plot the points for each PID group
-    ax.scatter(dem * 100, levels, color=blue, label='Democrats', s=100, zorder=3)
-    ax.scatter(rep * 100, levels, color=red, label='Republicans', s=100, zorder=3)
-
-    # Connect the dots with lines (Dem to Rep)
-    for i in range(len(levels)):
-        ax.plot([dem[i] * 100, rep[i] * 100], [levels[i], levels[i]], color=lightgray, zorder=2,linewidth=4)
-
-    # Add data labels outside the dots
-    for i, level in enumerate(levels):
-
-        # Determine scale for Democrats and Republicans separately
-        dem_scale = -1 if dem[i] < rep[i] else 1
-        rep_scale = 1 if dem[i] < rep[i] else -1
-        
-        # Add text for Democrats
-        ax.text(dem[i] * 100 + x_label_offset*dem_scale,
-                levels[i],
-                f'{round(dem[i] * 100)}%',
-                va='center', 
-                ha='right' if dem[i] > rep[i] else 'left', 
-                color=bpc_darkgray, fontsize=data_label_fontsize)
-
-        # Add text for Republicans
-        ax.text(rep[i] * 100 + x_label_offset*rep_scale,
-                levels[i],
-                f'{round(rep[i] * 100)}%',
-                va='center', 
-                ha='left' if dem[i] > rep[i] else 'right',
-                color=bpc_darkgray, fontsize=data_label_fontsize)
-        
-        if i == 0:
-            
-            diff = abs(rep[i]-dem[i])
-            if diff < 5:
-                cat_label_offset = abs(rep[i]-dem[i])+1.2
-            else:
-                cat_label_offset = 0
-
-            ax.text(dem[i] * 100 + cat_label_offset*dem_scale, i + y_label_offset,
-                    'Democrats', va='bottom', ha='center', color=blue, fontsize=data_label_fontsize,
-                    fontname='StyreneAMedium')
-
-            ax.text(rep[i] * 100 +  cat_label_offset*rep_scale, i + y_label_offset,
-                    'Republicans', va='bottom', ha='center', color=red, fontsize=data_label_fontsize,
-                    fontname='StyreneAMedium')
-
-            ax.plot([dem[i] * 100, dem[i] * 100], [i, i + y_label_offset * 0.8], color=blue, zorder=0)
-            ax.plot([rep[i] * 100, rep[i] * 100], [i, i + y_label_offset * 0.8], color=red, zorder=0)
-
-
-    # Wrap long y-axis labels if they exceed 50 characters
-    def wrap_labels(label, width=40):
-        return '\n'.join(textwrap.wrap(label, width))
-
-    wrapped_levels = [wrap_labels(level, width=40) for level in levels]
-
-    # Customize the plot aesthetics
-    ax.set_xlim(min_value, max_value)
-    ax.set_xlabel(xlabel, fontsize=xlabel_fontsize, fontname='StyreneAMedium',labelpad=10)
-
-    # Set y-axis labels with wrapped text
-    ax.set_yticks(np.arange(len(wrapped_levels)))
-    ax.set_yticklabels(wrapped_levels, fontsize=ylabel_fontsize, fontname='StyreneAMedium', color=bpc_darkgray,linespacing=1.5)
-
-    # Remove y-axis line
-    ax.tick_params(axis='y', length=0)
-
-    # Set ticks dynamically every 10% between the min and max values
-    tick_step = 10  # Set the step for ticks (10%)
-    ticks = np.arange(np.floor(min_value / tick_step) * tick_step, 
-                    np.ceil(max_value / tick_step) * tick_step + 1, tick_step)
-
-    # Customize x-axis tick labels
-    ax.set_xticks(ticks)
-    ax.set_xticklabels([f'{int(tick)}%' for tick in ticks], fontsize=xtick_label_fontsize)
-
-    # Add gridlines and remove frame
-    ax.grid(False)
-    sns.despine(left=True)
-
-    # Invert the y-axis so that the first category is at the top
-    ax.invert_yaxis()
-
-    # Final touch and show plot
-    plt.tight_layout()
-    plt.savefig(file_name)
     plt.show()
