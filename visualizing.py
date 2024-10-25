@@ -159,12 +159,12 @@ def plot_split_sample(all_dfs, q_codebook):
 
 
 
-def plot_question(df, question, question_text):
+def plot_question(df, question, question_text, sort=True):
     # this should handle most of our plots
     # it could eventually be used to plot the confidence questions
     # current problems that could be fixed some day: bar/group spacing, colors.
-
-    df = df.sort_values(by=df.columns[0],ascending=False)
+    if sort:
+        df = df.sort_values(by=df.columns[0],ascending=False)
 
 
     matrix = len(df.columns) > 1

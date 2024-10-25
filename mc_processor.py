@@ -212,7 +212,7 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
 
         if not suppress_output:
             question_text = get_question_text(q_codebook, question)
-            visualizing.plot_question(results, question, question_text)
+            visualizing.plot_question(results, question, question_text, sort=sort)
 
         return results
 
