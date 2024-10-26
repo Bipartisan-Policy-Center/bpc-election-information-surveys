@@ -213,7 +213,7 @@ def plot_question(df, question, question_text, sort=True):
 
     return ax
 
-def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title = None,plot_type=None):
+def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,plot_type=None,x_axis_limit = 1):
     categories = df.index
     n = len(categories)
 
@@ -253,7 +253,7 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title = No
     color2 = blue
 
 
-    x_label_offset = 0.015
+    x_label_offset = 0.015 * x_axis_limit
     y_label_offset = -0.13
 
     ms = 5 # markersize
@@ -290,15 +290,19 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title = No
         percent_marker = '%' if j == 0 else ''
         start_label = f'{round(start * 100)}{percent_marker}'
         end_label = f'{round(end * 100)}{percent_marker}'
-        ax.text(start - x_label_offset, y[j], start_label, ha='right', va='center', color=bpc_darkgray, fontsize=data_label_fontsize)
-        ax.text(end + x_label_offset, y[j], end_label, ha='left', va='center', color=bpc_darkgray, fontsize=data_label_fontsize)
+
+        sign = 1 if start < end else -1
+
+        ax.text(start - x_label_offset*sign, y[j], start_label, ha='right' if start < end else 'left', va='center', color=bpc_darkgray, fontsize=data_label_fontsize)
+        ax.text(end + x_label_offset*sign, y[j], end_label, ha='left' if start < end else 'right', va='center', color=bpc_darkgray, fontsize=data_label_fontsize)
 
 
         if j == 0:
             # ax.text(start - h_label_offset, y[j], "'22", ha='right', va='center', color='black')
             # ax.text(end + h_label_offset, y[j], "'24", ha='left', va='center', color='black')
-            ax.text(start, y[j]+ y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=data_label_fontsize, fontname='StyreneAMedium')
-            ax.text(end, y[j]+ y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=data_label_fontsize, fontname='StyreneAMedium')
+            offset = -.022 if x_axis_limit else 0
+            ax.text(start + (offset*sign), y[j]+ y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=data_label_fontsize, fontname='StyreneAMedium')
+            ax.text(end + (-1*offset*sign), y[j]+ y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=data_label_fontsize, fontname='StyreneAMedium')
             
             ax.plot([start, start], [y[j]+y_label_offset*.3, y[j]+y_label_offset*.7], color=color1, zorder=0)
             ax.plot([end, end], [y[j]+y_label_offset*.3, y[j]+y_label_offset*.7], color=color2, zorder=0)
@@ -316,11 +320,17 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel, title = No
 
     # # Setting the x-axis label
     ax.set_xlabel(xlabel, fontsize=xlabel_fontsize, fontname='StyreneAMedium')
-    ax.set_xlim([0, 1])
     # ax.set_xticks(np.linspace(0, 1, 11))
     # ax.set_xticklabels([f'{i}%' for i in range(0, 101, 10)], fontsize=label_fontsize)
-    ax.set_xticks(np.linspace(0, 1, 5))
-    ax.set_xticklabels(['0%', '25%', '50%', '75%', '100%'], fontsize=xtick_label_fontsize)
+
+    if x_axis_limit and x_axis_limit != 1:
+          ax.set_xlim([0, x_axis_limit])
+          ax.set_xticks(np.arange(0.1, x_axis_limit + 0.1, 0.1))
+          ax.set_xticklabels([f'{int(tick * 100)}%' for tick in np.arange(0.1, x_axis_limit + 0.1, 0.1)], fontsize=xtick_label_fontsize)
+    else:
+        ax.set_xlim([0, 1])
+        ax.set_xticks(np.linspace(0, 1, 5))
+        ax.set_xticklabels(['0%', '25%', '50%', '75%', '100%'], fontsize=xtick_label_fontsize)
     # ax.set_xticks(np.linspace(0, 1, 2))
     # ax.set_xticklabels(["0%", "100%"])
     sns.despine(left=True)
