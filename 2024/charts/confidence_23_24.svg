@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="768.285937pt" height="202.616375pt" viewBox="0 0 768.285937 202.616375" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2024-10-27T19:28:32.904585</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 202.616375 
+L 768.285937 202.616375 
+L 768.285937 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 187.44875 162.432 
+L 745.44875 162.432 
+L 745.44875 7.2 
+L 187.44875 7.2 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 574.112027 42.90336 
+L 574.112027 31.37184 
+" clip-path="url(#pbb005d2346)" style="fill: none; stroke: #3687e7; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 622.862906 42.90336 
+L 622.862906 31.37184 
+" clip-path="url(#pbb005d2346)" style="fill: none; stroke: #3c608a; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="mb6cd3e372c" d="M 0 0 
+L 0 3.5 
+" style="stroke: #333638"/>
+      </defs>
+      <g>
+       <use xlink:href="#mb6cd3e372c" x="187.44875" y="162.432" style="fill: #333638; stroke: #333638"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- 0% -->
+      <g style="fill: #262626" transform="translate(178.065234 177.527312) scale(0.11 -0.11)">
+       <defs>
+        <path id="StyreneA-Regular-30" d="M 2214 4621 
+C 1254 4621 627 4006 627 2963 
+L 627 1581 
+C 627 493 1274 -77 2214 -77 
+C 3155 -77 3802 493 3802 1581 
+L 3802 2963 
+C 3802 4006 3174 4621 2214 4621 
+z
+M 2214 486 
+C 1568 486 1242 954 1242 1587 
+L 1242 2957 
+C 1242 3590 1568 4058 2214 4058 
+C 2861 4058 3187 3590 3187 2957 
+L 3187 1587 
+C 3187 954 2861 486 2214 486 
+z
+" transform="scale(0.015625)"/>
+        <path id="StyreneA-Regular-25" d="M 1613 2278 
+C 2272 2278 2778 2784 2778 3450 
+C 2778 4115 2272 4621 1613 4621 
+C 954 4621 448 4115 448 3450 
+C 448 2784 954 2278 1613 2278 
+z
+M 1331 0 
+L 1933 0 
+L 5152 4544 
+L 4544 4544 
+L 1331 0 
+z
+M 1613 2752 
+C 1222 2752 954 3053 954 3450 
+C 954 3846 1222 4147 1613 4147 
+C 2003 4147 2272 3846 2272 3450 
+C 2272 3053 2003 2752 1613 2752 
+z
+M 4877 -90 
+C 5536 -90 6042 416 6042 1082 
+C 6042 1747 5536 2253 4877 2253 
+C 4218 2253 3712 1747 3712 1082 
+C 3712 416 4218 -90 4877 -90 
+z
+M 4877 384 
+C 4486 384 4218 685 4218 1082 
+C 4218 1478 4486 1779 4877 1779 
+C 5267 1779 5536 1478 5536 1082 
+C 5536 685 5267 384 4877 384 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#StyreneA-Regular-30"/>
+       <use xlink:href="#StyreneA-Regular-25" x="69.199982"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mb6cd3e372c" x="326.94875" y="162.432" style="fill: #333638; stroke: #333638"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- 25% -->
+      <g style="fill: #262626" transform="translate(314.392422 177.527312) scale(0.11 -0.11)">
+       <defs>
+        <path id="StyreneA-Regular-32" d="M 3674 563 
+L 1459 563 
+L 2419 1504 
+C 2976 2048 3411 2496 3411 3219 
+C 3411 4019 2854 4621 1946 4621 
+C 1043 4621 493 4006 493 3174 
+L 493 2874 
+L 1101 2874 
+L 1101 3168 
+C 1101 3686 1421 4058 1946 4058 
+C 2470 4058 2790 3718 2790 3219 
+C 2790 2726 2509 2394 2016 1901 
+L 480 384 
+L 480 0 
+L 3674 0 
+L 3674 563 
+z
+" transform="scale(0.015625)"/>
+        <path id="StyreneA-Regular-35" d="M 730 2010 
+L 1242 2010 
+C 1312 2112 1530 2432 2099 2432 
+C 2682 2432 3078 2067 3078 1491 
+L 3078 1427 
+C 3078 877 2682 486 2099 486 
+C 1395 486 1158 954 1114 1254 
+L 506 1254 
+C 557 563 1056 -77 2099 -77 
+C 3059 -77 3693 544 3693 1427 
+L 3693 1498 
+C 3693 2458 3021 2995 2240 2995 
+C 1798 2995 1498 2842 1318 2662 
+L 1318 3981 
+L 3520 3981 
+L 3520 4544 
+L 730 4544 
+L 730 2010 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#StyreneA-Regular-32"/>
+       <use xlink:href="#StyreneA-Regular-35" x="61.799988"/>
+       <use xlink:href="#StyreneA-Regular-25" x="126.899979"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#mb6cd3e372c" x="466.44875" y="162.432" style="fill: #333638; stroke: #333638"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- 50% -->
+      <g style="fill: #262626" transform="translate(453.485078 177.527312) scale(0.11 -0.11)">
+       <use xlink:href="#StyreneA-Regular-35"/>
+       <use xlink:href="#StyreneA-Regular-30" x="65.099991"/>
+       <use xlink:href="#StyreneA-Regular-25" x="134.299973"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#mb6cd3e372c" x="605.94875" y="162.432" style="fill: #333638; stroke: #333638"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 75% -->
+      <g style="fill: #262626" transform="translate(593.392422 177.527312) scale(0.11 -0.11)">
+       <defs>
+        <path id="StyreneA-Regular-37" d="M 3603 4077 
+L 3603 4544 
+L 416 4544 
+L 416 3981 
+L 2899 3981 
+L 672 0 
+L 1350 0 
+L 3603 4077 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#StyreneA-Regular-37"/>
+       <use xlink:href="#StyreneA-Regular-35" x="61.799988"/>
+       <use xlink:href="#StyreneA-Regular-25" x="126.899979"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#mb6cd3e372c" x="745.44875" y="162.432" style="fill: #333638; stroke: #333638"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 100% -->
+      <g style="fill: #262626" transform="translate(729.811563 177.527312) scale(0.11 -0.11)">
+       <defs>
+        <path id="StyreneA-Regular-31" d="M 2067 4563 
+L 1606 4563 
+L 320 3776 
+L 320 3187 
+L 1446 3840 
+L 1446 0 
+L 2067 0 
+L 2067 4563 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#StyreneA-Regular-31"/>
+       <use xlink:href="#StyreneA-Regular-30" x="44.499985"/>
+       <use xlink:href="#StyreneA-Regular-30" x="113.699966"/>
+       <use xlink:href="#StyreneA-Regular-25" x="182.899948"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_6">
+     <!-- Percent "very" or "somewhat" confident -->
+     <g style="fill: #262626" transform="translate(336.080938 192.86075) scale(0.12 -0.12)">
+      <defs>
+       <path id="StyreneA-Medium-50" d="M 627 0 
+L 1485 0 
+L 1485 1741 
+L 3136 1741 
+C 4154 1741 4723 2278 4723 3155 
+C 4723 4051 4154 4544 3136 4544 
+L 627 4544 
+L 627 0 
+z
+M 3091 3776 
+C 3597 3776 3840 3552 3840 3142 
+C 3840 2765 3590 2509 3091 2509 
+L 1485 2509 
+L 1485 3776 
+L 3091 3776 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-65" d="M 2010 3322 
+C 1018 3322 314 2624 314 1619 
+C 314 646 1018 -83 2074 -83 
+C 3174 -83 3616 614 3667 947 
+L 2861 947 
+C 2803 858 2592 595 2074 595 
+C 1536 595 1171 979 1133 1485 
+L 3706 1485 
+L 3706 1574 
+C 3706 2637 3008 3322 2010 3322 
+z
+M 2010 2688 
+C 2426 2688 2733 2458 2848 2048 
+L 1158 2048 
+C 1261 2445 1568 2688 2010 2688 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-72" d="M 1344 1702 
+C 1344 2214 1594 2445 2285 2445 
+L 3149 2445 
+L 3149 3258 
+L 2394 3258 
+C 1677 3258 1427 2880 1344 2694 
+L 1344 3238 
+L 531 3238 
+L 531 0 
+L 1344 0 
+L 1344 1702 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-63" d="M 2758 2170 
+L 3571 2170 
+C 3520 2528 3130 3322 1978 3322 
+C 1043 3322 314 2618 314 1619 
+C 314 621 1050 -83 1984 -83 
+C 3142 -83 3533 730 3571 1069 
+L 2771 1069 
+C 2726 979 2528 640 1997 640 
+C 1491 640 1146 1075 1146 1619 
+C 1146 2163 1491 2598 1990 2598 
+C 2509 2598 2714 2259 2758 2170 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-6e" d="M 1344 1728 
+C 1344 2227 1664 2579 2157 2579 
+C 2637 2579 2944 2240 2944 1728 
+L 2944 0 
+L 3770 0 
+L 3770 1888 
+C 3770 2714 3232 3309 2419 3309 
+C 1830 3309 1466 2925 1344 2694 
+L 1344 3238 
+L 531 3238 
+L 531 0 
+L 1344 0 
+L 1344 1728 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-74" d="M 3085 730 
+L 2464 730 
+C 2022 730 1888 902 1888 1306 
+L 1888 2541 
+L 3085 2541 
+L 3085 3238 
+L 1888 3238 
+L 1888 4544 
+L 1069 4544 
+L 1069 3238 
+L 179 3238 
+L 179 2541 
+L 1069 2541 
+L 1069 1056 
+C 1069 365 1427 0 2189 0 
+L 3085 0 
+L 3085 730 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-20" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-22" d="M 1293 2579 
+L 1293 4544 
+L 582 4544 
+L 582 2579 
+L 1293 2579 
+z
+M 2605 2579 
+L 2605 4544 
+L 1894 4544 
+L 1894 2579 
+L 2605 2579 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-76" d="M 3750 3238 
+L 2912 3238 
+L 1958 973 
+L 1005 3238 
+L 83 3238 
+L 1555 -45 
+L 2323 -45 
+L 3750 3238 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-79" d="M 3744 3238 
+L 2912 3238 
+L 1958 1037 
+L 1005 3238 
+L 83 3238 
+L 1542 58 
+L 928 -1363 
+L 1747 -1363 
+L 3744 3238 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-6f" d="M 2061 3322 
+C 1062 3322 314 2605 314 1619 
+C 314 634 1062 -83 2061 -83 
+C 3046 -83 3802 634 3802 1619 
+C 3802 2605 3046 3322 2061 3322 
+z
+M 2061 646 
+C 1510 646 1139 1075 1139 1619 
+C 1139 2163 1510 2592 2061 2592 
+C 2605 2592 2976 2170 2976 1619 
+C 2976 1069 2605 646 2061 646 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-73" d="M 2093 1267 
+C 2458 1229 2573 1101 2573 902 
+C 2573 698 2355 544 1907 544 
+C 1357 544 1158 832 1126 909 
+L 250 909 
+C 314 608 704 -90 1907 -90 
+C 2893 -90 3405 333 3405 934 
+C 3405 1568 3046 1907 2170 1984 
+L 1619 2042 
+C 1293 2080 1158 2202 1158 2381 
+C 1158 2573 1363 2707 1754 2707 
+C 2234 2707 2432 2483 2483 2413 
+L 3347 2413 
+C 3270 2726 2918 3328 1760 3328 
+C 890 3328 333 2944 333 2336 
+C 333 1702 813 1382 1523 1325 
+C 1747 1299 1862 1286 2093 1267 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-6d" d="M 1344 1728 
+C 1344 2227 1658 2579 2144 2579 
+C 2618 2579 2912 2240 2912 1728 
+L 2912 0 
+L 3731 0 
+L 3731 1728 
+C 3731 2227 4045 2579 4531 2579 
+C 5005 2579 5299 2240 5299 1728 
+L 5299 0 
+L 6118 0 
+L 6118 1888 
+C 6118 2714 5594 3309 4774 3309 
+C 4090 3309 3731 2880 3584 2586 
+C 3379 3027 2957 3309 2406 3309 
+C 1824 3309 1466 2931 1344 2694 
+L 1344 3238 
+L 531 3238 
+L 531 0 
+L 1344 0 
+L 1344 1728 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-77" d="M 3686 -26 
+L 4422 -26 
+L 5606 3238 
+L 4813 3238 
+L 4070 1082 
+L 3277 3264 
+L 2554 3264 
+L 1754 1062 
+L 1005 3238 
+L 115 3238 
+L 1325 -26 
+L 2042 -26 
+L 2861 2227 
+L 3686 -26 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-68" d="M 1344 1728 
+C 1344 2227 1664 2579 2157 2579 
+C 2637 2579 2944 2240 2944 1728 
+L 2944 0 
+L 3770 0 
+L 3770 1888 
+C 3770 2714 3232 3309 2419 3309 
+C 1830 3309 1466 2925 1344 2694 
+L 1344 4710 
+L 531 4710 
+L 531 0 
+L 1344 0 
+L 1344 1728 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-61" d="M 2938 512 
+L 2938 0 
+L 3750 0 
+L 3750 3238 
+L 2931 3238 
+L 2931 2752 
+C 2861 2886 2534 3309 1850 3309 
+C 1011 3309 320 2669 320 1619 
+C 320 557 1011 -70 1843 -70 
+C 2554 -70 2874 378 2938 512 
+z
+M 2944 1619 
+C 2944 1069 2592 646 2061 646 
+C 1510 646 1152 1069 1152 1619 
+C 1152 2170 1510 2592 2061 2592 
+C 2592 2592 2944 2170 2944 1619 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-66" d="M 3046 2547 
+L 3046 3238 
+L 1888 3238 
+L 1888 3552 
+C 1888 3878 2042 4058 2400 4058 
+L 3546 4058 
+L 3546 4710 
+L 2150 4710 
+C 1414 4710 1069 4339 1069 3712 
+L 1069 3238 
+L 179 3238 
+L 179 2547 
+L 1069 2547 
+L 1069 0 
+L 1888 0 
+L 1888 2547 
+L 3046 2547 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-69" d="M 518 3757 
+L 1370 3757 
+L 1370 4730 
+L 518 4730 
+L 518 3757 
+z
+M 538 0 
+L 1357 0 
+L 1357 3238 
+L 538 3238 
+L 538 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="StyreneA-Medium-64" d="M 2982 512 
+L 2982 0 
+L 3795 0 
+L 3795 4710 
+L 2976 4710 
+L 2976 2752 
+C 2912 2880 2566 3309 1862 3309 
+C 1024 3309 320 2675 320 1619 
+C 320 563 1018 -70 1862 -70 
+C 2573 -70 2918 384 2982 512 
+z
+M 2989 1619 
+C 2989 1062 2630 646 2080 646 
+C 1517 646 1152 1062 1152 1619 
+C 1152 2176 1517 2592 2080 2592 
+C 2630 2592 2989 2176 2989 1619 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#StyreneA-Medium-50"/>
+      <use xlink:href="#StyreneA-Medium-65" x="78.999985"/>
+      <use xlink:href="#StyreneA-Medium-72" x="141.399979"/>
+      <use xlink:href="#StyreneA-Medium-63" x="193.699966"/>
+      <use xlink:href="#StyreneA-Medium-65" x="253.799957"/>
+      <use xlink:href="#StyreneA-Medium-6e" x="316.199951"/>
+      <use xlink:href="#StyreneA-Medium-74" x="382.699936"/>
+      <use xlink:href="#StyreneA-Medium-20" x="435.59993"/>
+      <use xlink:href="#StyreneA-Medium-22" x="461.399918"/>
+      <use xlink:href="#StyreneA-Medium-76" x="511.199905"/>
+      <use xlink:href="#StyreneA-Medium-65" x="571.19989"/>
+      <use xlink:href="#StyreneA-Medium-72" x="633.599884"/>
+      <use xlink:href="#StyreneA-Medium-79" x="685.899872"/>
+      <use xlink:href="#StyreneA-Medium-22" x="745.799866"/>
+      <use xlink:href="#StyreneA-Medium-20" x="795.599854"/>
+      <use xlink:href="#StyreneA-Medium-6f" x="821.399841"/>
+      <use xlink:href="#StyreneA-Medium-72" x="885.699829"/>
+      <use xlink:href="#StyreneA-Medium-20" x="937.999817"/>
+      <use xlink:href="#StyreneA-Medium-22" x="963.799805"/>
+      <use xlink:href="#StyreneA-Medium-73" x="1013.599792"/>
+      <use xlink:href="#StyreneA-Medium-6f" x="1071.39978"/>
+      <use xlink:href="#StyreneA-Medium-6d" x="1135.699768"/>
+      <use xlink:href="#StyreneA-Medium-65" x="1238.999756"/>
+      <use xlink:href="#StyreneA-Medium-77" x="1301.39975"/>
+      <use xlink:href="#StyreneA-Medium-68" x="1390.799744"/>
+      <use xlink:href="#StyreneA-Medium-61" x="1457.299728"/>
+      <use xlink:href="#StyreneA-Medium-74" x="1524.099716"/>
+      <use xlink:href="#StyreneA-Medium-22" x="1576.99971"/>
+      <use xlink:href="#StyreneA-Medium-20" x="1626.799698"/>
+      <use xlink:href="#StyreneA-Medium-63" x="1652.599686"/>
+      <use xlink:href="#StyreneA-Medium-6f" x="1712.699677"/>
+      <use xlink:href="#StyreneA-Medium-6e" x="1776.999664"/>
+      <use xlink:href="#StyreneA-Medium-66" x="1843.499649"/>
+      <use xlink:href="#StyreneA-Medium-69" x="1893.899643"/>
+      <use xlink:href="#StyreneA-Medium-64" x="1923.399628"/>
+      <use xlink:href="#StyreneA-Medium-65" x="1990.999619"/>
+      <use xlink:href="#StyreneA-Medium-6e" x="2053.399612"/>
+      <use xlink:href="#StyreneA-Medium-74" x="2119.899597"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_8"/>
+     <g id="text_7">
+      <!-- Your vote -->
+      <g style="fill: #333638" transform="translate(120.9 55.967625) scale(0.12 -0.12)">
+       <defs>
+        <path id="StyreneA-Medium-59" d="M 2976 1920 
+L 4954 4544 
+L 3968 4544 
+L 2560 2694 
+L 1146 4544 
+L 51 4544 
+L 2093 1914 
+L 2093 0 
+L 2976 0 
+L 2976 1920 
+z
+" transform="scale(0.015625)"/>
+        <path id="StyreneA-Medium-75" d="M 2099 -70 
+C 3104 -70 3686 550 3686 1427 
+L 3686 3238 
+L 2861 3238 
+L 2861 1517 
+C 2861 1018 2586 678 2086 678 
+C 1587 678 1312 1018 1312 1517 
+L 1312 3238 
+L 493 3238 
+L 493 1427 
+C 493 550 1075 -70 2099 -70 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#StyreneA-Medium-59"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="78.199982"/>
+       <use xlink:href="#StyreneA-Medium-75" x="142.499969"/>
+       <use xlink:href="#StyreneA-Medium-72" x="207.699966"/>
+       <use xlink:href="#StyreneA-Medium-20" x="259.999954"/>
+       <use xlink:href="#StyreneA-Medium-76" x="285.799942"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="345.799927"/>
+       <use xlink:href="#StyreneA-Medium-74" x="410.099915"/>
+       <use xlink:href="#StyreneA-Medium-65" x="462.999908"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9"/>
+     <g id="text_8">
+      <!-- Votes in your city or county -->
+      <g style="fill: #333638" transform="translate(7.2 85.554375) scale(0.12 -0.12)">
+       <defs>
+        <path id="StyreneA-Medium-56" d="M 4992 4544 
+L 4109 4544 
+L 2637 1062 
+L 1171 4544 
+L 186 4544 
+L 2189 -13 
+L 3046 -13 
+L 4992 4544 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#StyreneA-Medium-56"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="80.899994"/>
+       <use xlink:href="#StyreneA-Medium-74" x="145.199982"/>
+       <use xlink:href="#StyreneA-Medium-65" x="198.099976"/>
+       <use xlink:href="#StyreneA-Medium-73" x="260.499969"/>
+       <use xlink:href="#StyreneA-Medium-20" x="318.299957"/>
+       <use xlink:href="#StyreneA-Medium-69" x="344.099945"/>
+       <use xlink:href="#StyreneA-Medium-6e" x="373.59993"/>
+       <use xlink:href="#StyreneA-Medium-20" x="440.099915"/>
+       <use xlink:href="#StyreneA-Medium-79" x="465.899902"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="525.799896"/>
+       <use xlink:href="#StyreneA-Medium-75" x="590.099884"/>
+       <use xlink:href="#StyreneA-Medium-72" x="655.299881"/>
+       <use xlink:href="#StyreneA-Medium-20" x="707.599869"/>
+       <use xlink:href="#StyreneA-Medium-63" x="733.399857"/>
+       <use xlink:href="#StyreneA-Medium-69" x="793.499847"/>
+       <use xlink:href="#StyreneA-Medium-74" x="822.999832"/>
+       <use xlink:href="#StyreneA-Medium-79" x="875.899826"/>
+       <use xlink:href="#StyreneA-Medium-20" x="935.79982"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="961.599808"/>
+       <use xlink:href="#StyreneA-Medium-72" x="1025.899796"/>
+       <use xlink:href="#StyreneA-Medium-20" x="1078.199783"/>
+       <use xlink:href="#StyreneA-Medium-63" x="1103.999771"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="1164.099762"/>
+       <use xlink:href="#StyreneA-Medium-75" x="1228.39975"/>
+       <use xlink:href="#StyreneA-Medium-6e" x="1293.599747"/>
+       <use xlink:href="#StyreneA-Medium-74" x="1360.099731"/>
+       <use xlink:href="#StyreneA-Medium-79" x="1412.999725"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10"/>
+     <g id="text_9">
+      <!-- Votes in your state -->
+      <g style="fill: #333638" transform="translate(60.8025 115.122375) scale(0.12 -0.12)">
+       <use xlink:href="#StyreneA-Medium-56"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="80.899994"/>
+       <use xlink:href="#StyreneA-Medium-74" x="145.199982"/>
+       <use xlink:href="#StyreneA-Medium-65" x="198.099976"/>
+       <use xlink:href="#StyreneA-Medium-73" x="260.499969"/>
+       <use xlink:href="#StyreneA-Medium-20" x="318.299957"/>
+       <use xlink:href="#StyreneA-Medium-69" x="344.099945"/>
+       <use xlink:href="#StyreneA-Medium-6e" x="373.59993"/>
+       <use xlink:href="#StyreneA-Medium-20" x="440.099915"/>
+       <use xlink:href="#StyreneA-Medium-79" x="465.899902"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="525.799896"/>
+       <use xlink:href="#StyreneA-Medium-75" x="590.099884"/>
+       <use xlink:href="#StyreneA-Medium-72" x="655.299881"/>
+       <use xlink:href="#StyreneA-Medium-20" x="707.599869"/>
+       <use xlink:href="#StyreneA-Medium-73" x="733.399857"/>
+       <use xlink:href="#StyreneA-Medium-74" x="791.199844"/>
+       <use xlink:href="#StyreneA-Medium-61" x="844.099838"/>
+       <use xlink:href="#StyreneA-Medium-74" x="910.899826"/>
+       <use xlink:href="#StyreneA-Medium-65" x="963.79982"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11"/>
+     <g id="text_10">
+      <!-- Votes across the country -->
+      <g style="fill: #333638" transform="translate(21.013125 144.671625) scale(0.12 -0.12)">
+       <use xlink:href="#StyreneA-Medium-56"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="80.899994"/>
+       <use xlink:href="#StyreneA-Medium-74" x="145.199982"/>
+       <use xlink:href="#StyreneA-Medium-65" x="198.099976"/>
+       <use xlink:href="#StyreneA-Medium-73" x="260.499969"/>
+       <use xlink:href="#StyreneA-Medium-20" x="318.299957"/>
+       <use xlink:href="#StyreneA-Medium-61" x="344.099945"/>
+       <use xlink:href="#StyreneA-Medium-63" x="410.899933"/>
+       <use xlink:href="#StyreneA-Medium-72" x="470.999924"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="523.299911"/>
+       <use xlink:href="#StyreneA-Medium-73" x="587.599899"/>
+       <use xlink:href="#StyreneA-Medium-73" x="645.399887"/>
+       <use xlink:href="#StyreneA-Medium-20" x="703.199875"/>
+       <use xlink:href="#StyreneA-Medium-74" x="728.999863"/>
+       <use xlink:href="#StyreneA-Medium-68" x="781.899857"/>
+       <use xlink:href="#StyreneA-Medium-65" x="848.399841"/>
+       <use xlink:href="#StyreneA-Medium-20" x="910.799835"/>
+       <use xlink:href="#StyreneA-Medium-63" x="936.599823"/>
+       <use xlink:href="#StyreneA-Medium-6f" x="996.699814"/>
+       <use xlink:href="#StyreneA-Medium-75" x="1060.999802"/>
+       <use xlink:href="#StyreneA-Medium-6e" x="1126.199799"/>
+       <use xlink:href="#StyreneA-Medium-74" x="1192.699783"/>
+       <use xlink:href="#StyreneA-Medium-72" x="1245.599777"/>
+       <use xlink:href="#StyreneA-Medium-79" x="1297.899765"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 187.44875 162.432 
+L 745.44875 162.432 
+" style="fill: none; stroke: #333638; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <!-- 69% -->
+    <g style="fill: #333638" transform="translate(540.197964 54.367312) scale(0.11 -0.11)">
+     <defs>
+      <path id="StyreneA-Regular-36" d="M 3725 1472 
+C 3725 2406 3117 2995 2272 2995 
+C 2022 2995 1824 2944 1670 2861 
+L 2995 4544 
+L 2259 4544 
+L 1197 3155 
+C 794 2630 461 2163 461 1472 
+C 461 576 1050 -77 2086 -77 
+C 3117 -77 3725 602 3725 1472 
+z
+M 3104 1472 
+C 3104 934 2752 486 2086 486 
+C 1446 486 1082 934 1082 1472 
+C 1082 2042 1472 2470 2086 2470 
+C 2752 2470 3104 2042 3104 1472 
+z
+" transform="scale(0.015625)"/>
+      <path id="StyreneA-Regular-39" d="M 2989 1389 
+C 3392 1914 3725 2381 3725 3072 
+C 3725 3968 3136 4621 2099 4621 
+C 1069 4621 461 3942 461 3072 
+C 461 2138 1069 1549 1914 1549 
+C 2163 1549 2362 1600 2515 1683 
+L 1190 0 
+L 1926 0 
+L 2989 1389 
+z
+M 1082 3072 
+C 1082 3610 1434 4058 2099 4058 
+C 2739 4058 3104 3610 3104 3072 
+C 3104 2502 2714 2074 2099 2074 
+C 1434 2074 1082 2502 1082 3072 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#StyreneA-Regular-36"/>
+     <use xlink:href="#StyreneA-Regular-39" x="65.399994"/>
+     <use xlink:href="#StyreneA-Regular-25" x="130.799988"/>
+    </g>
+   </g>
+   <g id="text_12">
+    <!-- 78% -->
+    <g style="fill: #333638" transform="translate(631.232906 54.367312) scale(0.11 -0.11)">
+     <defs>
+      <path id="StyreneA-Regular-38" d="M 3776 1229 
+C 3776 1882 3315 2234 2963 2342 
+C 3290 2438 3686 2758 3686 3366 
+C 3686 4083 3174 4621 2227 4621 
+L 2061 4621 
+C 1120 4621 602 4083 602 3366 
+C 602 2758 998 2438 1325 2342 
+C 973 2234 512 1882 512 1229 
+C 512 461 1101 -77 2042 -77 
+L 2214 -77 
+C 3181 -77 3776 461 3776 1229 
+z
+M 2061 4070 
+L 2227 4070 
+C 2733 4070 3072 3782 3072 3341 
+C 3072 2899 2733 2611 2227 2611 
+L 2061 2611 
+C 1555 2611 1216 2899 1216 3341 
+C 1216 3782 1555 4070 2061 4070 
+z
+M 2048 2061 
+L 2240 2061 
+C 2784 2061 3149 1747 3149 1267 
+C 3149 787 2784 474 2240 474 
+L 2048 474 
+C 1510 474 1139 787 1139 1267 
+C 1139 1747 1510 2061 2048 2061 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#StyreneA-Regular-37"/>
+     <use xlink:href="#StyreneA-Regular-38" x="61.799988"/>
+     <use xlink:href="#StyreneA-Regular-25" x="128.799973"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <!-- Dec '23 -->
+    <g style="fill: #3687e7" transform="translate(540.474542 25.604684) scale(0.11 -0.11)">
+     <defs>
+      <path id="StyreneA-Medium-44" d="M 627 0 
+L 2464 0 
+C 3923 0 4896 858 4896 2272 
+C 4896 3712 3917 4544 2464 4544 
+L 627 4544 
+L 627 0 
+z
+M 2451 3789 
+C 3405 3789 4019 3238 4019 2272 
+C 4019 1338 3405 755 2451 755 
+L 1485 755 
+L 1485 3789 
+L 2451 3789 
+z
+" transform="scale(0.015625)"/>
+      <path id="StyreneA-Medium-27" d="M 1312 2579 
+L 1312 4544 
+L 582 4544 
+L 582 2579 
+L 1312 2579 
+z
+" transform="scale(0.015625)"/>
+      <path id="StyreneA-Medium-32" d="M 3789 749 
+L 1754 749 
+L 2560 1510 
+C 3123 2035 3546 2470 3546 3181 
+C 3546 4019 2970 4621 1984 4621 
+C 1005 4621 442 3968 442 3123 
+L 442 2835 
+L 1274 2835 
+L 1274 3104 
+C 1274 3546 1542 3859 1984 3859 
+C 2432 3859 2688 3571 2688 3162 
+C 2688 2752 2464 2477 2042 2074 
+L 429 550 
+L 429 0 
+L 3789 0 
+L 3789 749 
+z
+" transform="scale(0.015625)"/>
+      <path id="StyreneA-Medium-33" d="M 3750 1280 
+C 3750 1984 3328 2304 2989 2406 
+C 3258 2515 3610 2803 3610 3341 
+C 3610 4115 3027 4621 2010 4621 
+C 947 4621 454 3930 429 3322 
+L 1267 3322 
+C 1318 3597 1530 3878 2016 3878 
+C 2464 3878 2758 3654 2758 3283 
+C 2758 2912 2522 2707 2131 2707 
+L 1299 2707 
+L 1299 1965 
+L 2157 1965 
+C 2624 1965 2893 1741 2893 1331 
+C 2893 922 2573 678 2042 678 
+C 1491 678 1242 1005 1184 1267 
+L 333 1267 
+C 378 653 877 -77 2042 -77 
+C 3123 -77 3750 467 3750 1280 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#StyreneA-Medium-44"/>
+     <use xlink:href="#StyreneA-Medium-65" x="82.599991"/>
+     <use xlink:href="#StyreneA-Medium-63" x="144.999985"/>
+     <use xlink:href="#StyreneA-Medium-20" x="205.099976"/>
+     <use xlink:href="#StyreneA-Medium-27" x="230.899963"/>
+     <use xlink:href="#StyreneA-Medium-32" x="260.499954"/>
+     <use xlink:href="#StyreneA-Medium-33" x="323.499939"/>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- Oct '24 -->
+    <g style="fill: #3c608a" transform="translate(613.787734 25.604684) scale(0.11 -0.11)">
+     <defs>
+      <path id="StyreneA-Medium-4f" d="M 2765 -77 
+C 4115 -77 5146 915 5146 2272 
+C 5146 3635 4115 4621 2765 4621 
+C 1414 4621 384 3635 384 2272 
+C 384 909 1402 -77 2765 -77 
+z
+M 2765 704 
+C 1856 704 1267 1395 1267 2272 
+C 1267 3136 1862 3840 2765 3840 
+C 3674 3840 4269 3136 4269 2272 
+C 4269 1402 3674 704 2765 704 
+z
+" transform="scale(0.015625)"/>
+      <path id="StyreneA-Medium-34" d="M 4282 1312 
+L 4282 2035 
+L 3360 2035 
+L 3360 4544 
+L 2400 4544 
+L 256 1830 
+L 256 1312 
+L 2534 1312 
+L 2534 0 
+L 3360 0 
+L 3360 1312 
+L 4282 1312 
+z
+M 1235 2035 
+L 2534 3712 
+L 2534 2035 
+L 1235 2035 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#StyreneA-Medium-4f"/>
+     <use xlink:href="#StyreneA-Medium-63" x="86.399994"/>
+     <use xlink:href="#StyreneA-Medium-74" x="146.499985"/>
+     <use xlink:href="#StyreneA-Medium-20" x="199.399979"/>
+     <use xlink:href="#StyreneA-Medium-27" x="225.199966"/>
+     <use xlink:href="#StyreneA-Medium-32" x="254.799957"/>
+     <use xlink:href="#StyreneA-Medium-34" x="317.799942"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <!-- 74 -->
+    <g style="fill: #333638" transform="translate(576.979442 83.935312) scale(0.11 -0.11)">
+     <defs>
+      <path id="StyreneA-Regular-34" d="M 4160 1402 
+L 4160 1939 
+L 3194 1939 
+L 3194 4544 
+L 2515 4544 
+L 288 1741 
+L 288 1402 
+L 2592 1402 
+L 2592 0 
+L 3194 0 
+L 3194 1402 
+L 4160 1402 
+z
+M 1107 1939 
+L 2592 3827 
+L 2592 1939 
+L 1107 1939 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#StyreneA-Regular-37"/>
+     <use xlink:href="#StyreneA-Regular-34" x="61.799988"/>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- 80 -->
+    <g style="fill: #333638" transform="translate(642.176205 83.935312) scale(0.11 -0.11)">
+     <use xlink:href="#StyreneA-Regular-38"/>
+     <use xlink:href="#StyreneA-Regular-30" x="66.999985"/>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- 73 -->
+    <g style="fill: #333638" transform="translate(571.968591 113.503312) scale(0.11 -0.11)">
+     <defs>
+      <path id="StyreneA-Regular-33" d="M 3648 1242 
+C 3648 1958 3206 2291 2867 2387 
+C 3136 2502 3501 2810 3501 3373 
+C 3501 4096 2963 4621 2010 4621 
+C 1024 4621 570 3962 538 3379 
+L 1152 3379 
+C 1216 3757 1478 4064 2016 4064 
+C 2528 4064 2886 3795 2886 3347 
+C 2886 2886 2592 2630 2112 2630 
+L 1293 2630 
+L 1293 2067 
+L 2093 2067 
+C 2682 2067 3021 1786 3021 1280 
+C 3021 781 2630 486 2029 486 
+C 1408 486 1107 851 1037 1203 
+L 416 1203 
+C 474 589 947 -77 2029 -77 
+C 3046 -77 3648 461 3648 1242 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#StyreneA-Regular-37"/>
+     <use xlink:href="#StyreneA-Regular-33" x="61.799988"/>
+    </g>
+   </g>
+   <g id="text_18">
+    <!-- 77 -->
+    <g style="fill: #333638" transform="translate(627.756415 113.503312) scale(0.11 -0.11)">
+     <use xlink:href="#StyreneA-Regular-37"/>
+     <use xlink:href="#StyreneA-Regular-37" x="61.799988"/>
+    </g>
+   </g>
+   <g id="text_19">
+    <!-- 64 -->
+    <g style="fill: #333638" transform="translate(521.118218 143.071312) scale(0.11 -0.11)">
+     <use xlink:href="#StyreneA-Regular-36"/>
+     <use xlink:href="#StyreneA-Regular-34" x="65.399994"/>
+    </g>
+   </g>
+   <g id="text_20">
+    <!-- 71 -->
+    <g style="fill: #333638" transform="translate(592.639427 143.071312) scale(0.11 -0.11)">
+     <use xlink:href="#StyreneA-Regular-37"/>
+     <use xlink:href="#StyreneA-Regular-31" x="61.799988"/>
+    </g>
+   </g>
+   <g id="patch_4">
+    <path d="M 617.282906 51.552 
+L 611.702906 47.6712 
+L 611.702906 50.4432 
+L 574.112027 50.4432 
+L 574.112027 52.6608 
+L 611.702906 52.6608 
+L 611.702906 55.4328 
+z
+" clip-path="url(#pbb005d2346)" style="fill: #3687e7; stroke: #3687e7; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_12">
+    <defs>
+     <path id="mbfd658da41" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #3687e7"/>
+    </defs>
+    <g clip-path="url(#pbb005d2346)">
+     <use xlink:href="#mbfd658da41" x="574.112027" y="51.552" style="fill: #3687e7; stroke: #3687e7"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <defs>
+     <path id="m83815de6ae" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #3c608a"/>
+    </defs>
+    <g>
+     <use xlink:href="#m83815de6ae" x="622.862906" y="51.552" style="fill: #3c608a; stroke: #3c608a"/>
+    </g>
+   </g>
+   <g id="patch_5">
+    <path d="M 628.226205 81.12 
+L 622.646205 77.2392 
+L 622.646205 80.0112 
+L 599.714754 80.0112 
+L 599.714754 82.2288 
+L 622.646205 82.2288 
+L 622.646205 85.0008 
+z
+" clip-path="url(#pbb005d2346)" style="fill: #3687e7; stroke: #3687e7; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_14">
+    <g clip-path="url(#pbb005d2346)">
+     <use xlink:href="#mbfd658da41" x="599.714754" y="81.12" style="fill: #3687e7; stroke: #3687e7"/>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <g>
+     <use xlink:href="#m83815de6ae" x="633.806205" y="81.12" style="fill: #3c608a; stroke: #3c608a"/>
+    </g>
+   </g>
+   <g id="patch_6">
+    <path d="M 613.806415 110.688 
+L 608.226415 106.8072 
+L 608.226415 109.5792 
+L 594.198591 109.5792 
+L 594.198591 111.7968 
+L 608.226415 111.7968 
+L 608.226415 114.5688 
+z
+" clip-path="url(#pbb005d2346)" style="fill: #3687e7; stroke: #3687e7; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#pbb005d2346)">
+     <use xlink:href="#mbfd658da41" x="594.198591" y="110.688" style="fill: #3687e7; stroke: #3687e7"/>
+    </g>
+   </g>
+   <g id="line2d_17">
+    <g>
+     <use xlink:href="#m83815de6ae" x="619.386415" y="110.688" style="fill: #3c608a; stroke: #3c608a"/>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 578.689427 140.256 
+L 573.109427 136.3752 
+L 573.109427 139.1472 
+L 544.250562 139.1472 
+L 544.250562 141.3648 
+L 573.109427 141.3648 
+L 573.109427 144.1368 
+z
+" clip-path="url(#pbb005d2346)" style="fill: #3687e7; stroke: #3687e7; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_18">
+    <g clip-path="url(#pbb005d2346)">
+     <use xlink:href="#mbfd658da41" x="544.250562" y="140.256" style="fill: #3687e7; stroke: #3687e7"/>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <g>
+     <use xlink:href="#m83815de6ae" x="584.269427" y="140.256" style="fill: #3c608a; stroke: #3c608a"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbb005d2346">
+   <rect x="187.44875" y="7.2" width="558" height="155.232"/>
+  </clipPath>
+ </defs>
+</svg>
