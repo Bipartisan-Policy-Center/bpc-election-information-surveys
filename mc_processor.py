@@ -175,11 +175,12 @@ def get_question_text(q_codebook, question):
         question_text = question_text.split('\\\\')[0]
     return question_text
 
-def get_parallel_questions(data, codebook, q_codebook, questions, survey_year, demo=None):
+def get_parallel_questions(data, codebook, q_codebook, questions, demo=None):
     dfs = []
     for question in questions:
         question_text = get_question_text(q_codebook, question)
-        df = run_and_display(data,codebook,q_codebook,question,survey_year,demo,suppress_output=True)
+        df = run_and_display(data,codebook,q_codebook,question,demo,suppress_output=True)
+        display(df)
         df.columns = [question_text]
         dfs.append(df)
 
@@ -188,27 +189,27 @@ def get_parallel_questions(data, codebook, q_codebook, questions, survey_year, d
     return df
 
 
-def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,suppress_output=False, sort=True):
+def run_and_display(data,codebook,q_codebook,question,demo=None,suppress_output=False,sort=True):
     """
     Runs and displays results for a given question
     """
-
-    #convert to string in case int given
-    survey_year = str(survey_year)
 
     try:
         results = get_percents(data,codebook,q_codebook,question,demo)
         if sort:
             results = results.sort_values(by=results.columns[0])
 
+        if not os.path.exists(f"processed/"):
+            os.makedirs(f"processed/")
+        
         if demo:
             # create demo directory
-            if not os.path.exists(f"{survey_year}/processed/{demo}"):
-                os.makedirs(f"{survey_year}/processed/{demo}")
+            if not os.path.exists(f"processed/{demo}"):
+                os.makedirs(f"processed/{demo}")
             # save to demo directory
-            results.to_csv(f"{survey_year}/processed/{demo}/{question}.csv")
+            results.to_csv(f"processed/{demo}/{question}.csv")
         else:
-            results.to_csv(f"{survey_year}/processed/{question}.csv")
+            results.to_csv(f"processed/{question}.csv")
 
         if not suppress_output:
             question_text = get_question_text(q_codebook, question)
@@ -217,7 +218,7 @@ def run_and_display(data,codebook,q_codebook,question,survey_year,demo=None,supp
         return results
 
     except Exception as e:
-        print(f"*Issue with {question} {str(e)[:100]}\n")
+        print(f"*Issue with {question}: {str(e)[:300]}\n")
 
 
 ### IGNORE SPLIT SAMPLE
@@ -249,22 +250,3 @@ def get_confidence_results(data, codebook, q_codebook, question_number=20, demo=
     demo_results["overall"] = results
 
     return pd.DataFrame(demo_results).sort_values(by='overall', ascending=False)
-    
-# def run_confidence(data,codebook,q_codebook,question_number,demo=None,suppress_output=False):
-
-#     ### SOME ISSUES HERE W DEMOS
-
-#     demo_results = {}
-
-#     #if demo provided
-#     if demo:
-#         for demo_group, group_data in data.groupby([demo]):
-#             #lookup demo name
-#             demo_category_name = get_name_from_codebook(codebook,demo,demo_group[0])
-            
-#             demo_results[demo_category_name] = get_confidence_results(group_data,codebook,q_codebook,question_number,demo,suppress_output)
-
-
-#     demo_results["overall"] = get_confidence_results(data,codebook,q_codebook,question_number,demo,suppress_output)
-
-#     return pd.DataFrame(demo_results) #.sort_values(by='overall',ascending=False)

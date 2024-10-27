@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 
@@ -10,9 +9,6 @@ from matplotlib import font_manager
 import seaborn as sns
 import os
 from matplotlib.ticker import FuncFormatter
-import textwrap
-
-
 
 colors = {
     "very_confident": "#2E4465",
@@ -22,8 +18,27 @@ colors = {
     "not_confident_at_all": "#321420" 
 }
 
-def plot_overall_confidence(df):
+import matplotlib
+from matplotlib import font_manager
 
+def setup_custom_fonts():
+    """
+    Registers custom fonts and sets the default font family for matplotlib charts.
+    """
+    fonts = [
+        ('../fonts/StyreneA-Black.otf', 'StyreneABlack'),
+        ('../fonts/StyreneA-Medium.otf', 'StyreneAMedium'),
+        ('../fonts/StyreneA-Regular.otf', 'StyreneARegular')
+    ]
+
+    for font_path, font_name in fonts:
+        fe = font_manager.FontEntry(fname=font_path, name=font_name)
+        font_manager.fontManager.ttflist.insert(0, fe)  # Insert at the beginning of the list
+
+    # Set the default font family to 'StyreneARegular' or another preferred font
+    matplotlib.rcParams['font.family'] = 'StyreneARegular'
+
+def plot_overall_confidence(df):
 
     # Extract the data from df
     categories = df.columns  # The different vote levels
@@ -88,6 +103,7 @@ def plot_overall_confidence(df):
 
 
 def plot_split_sample(all_dfs, q_codebook):
+    
 
     for i, q_df in enumerate(all_dfs):
 
@@ -158,15 +174,12 @@ def plot_split_sample(all_dfs, q_codebook):
     plt.show()
 
 
-
-
 def plot_question(df, question, question_text, sort=True):
     # this should handle most of our plots
     # it could eventually be used to plot the confidence questions
     # current problems that could be fixed some day: bar/group spacing, colors.
     if sort:
         df = df.sort_values(by=df.columns[0],ascending=False)
-
 
     matrix = len(df.columns) > 1
     sums_to_1 = all(abs(df.sum(axis=1) - 1) < 0.1)
@@ -221,23 +234,7 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,
 
     sns.set_style('ticks')
 
-    fe = font_manager.FontEntry(
-        fname='fonts/StyreneA-Black.otf',
-        name='StyreneABlack')
-    font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
-
-    fe = font_manager.FontEntry(
-        fname='fonts/StyreneA-Medium.otf',
-        name='StyreneAMedium')
-    font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
-
-    fe = font_manager.FontEntry(
-        fname='fonts/StyreneA-Regular.otf',
-        name='StyreneARegular')
-    font_manager.fontManager.ttflist.insert(0, fe) # or append is fine
-
-    matplotlib.rcParams['font.family'] = 'StyreneARegular' # = 'your custom ttf font name'
-
+    setup_custom_fonts()
 
     delta = 0.2
     y = np.linspace(-delta, delta, n)
