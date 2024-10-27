@@ -297,7 +297,7 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,
         if j == 0:
             # ax.text(start - h_label_offset, y[j], "'22", ha='right', va='center', color='black')
             # ax.text(end + h_label_offset, y[j], "'24", ha='left', va='center', color='black')
-            offset = -.022 if x_axis_limit else 0
+            offset = -.06 * x_axis_limit if x_axis_limit else 0
             ax.text(start + (offset*sign), y[j]+ y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=data_label_fontsize, fontname='StyreneAMedium')
             ax.text(end + (-1*offset*sign), y[j]+ y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=data_label_fontsize, fontname='StyreneAMedium')
             
