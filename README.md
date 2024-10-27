@@ -61,7 +61,7 @@ BPC-ELECTION-INFORMATION-SURVEYS/
 ```
 ## Survey methodology
 
-The interviews were conducted online with data weighted to approximate a target sample of registered voters based on age and gender, educational attainment, race, marital status, homeownership, race by education, 2020 presidential vote, and region. The results have a margin of error of ±2 percentage points.
+The interviews were conducted online with data weighted to approximate a target sample of registered voters based on age and gender, educational attainment, race, marital status, homeownership, race by education, 2020 presidential vote, and region. The results have a margin of error of ±2 percentage points, except for the 2022 state oversamples which have a margin of error of ±3-4 percentage points.
 
 ## Analysis and publications
 
