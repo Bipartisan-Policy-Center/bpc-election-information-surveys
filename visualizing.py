@@ -226,7 +226,7 @@ def plot_question(df, question, question_text, sort=True):
 
     return ax
 
-def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,plot_type=None,x_axis_limit = 1):
+def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,plot_type=None,x_axis_limit = 1):
     categories = df.index
     n = len(categories)
 
@@ -247,8 +247,9 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,
     lightblue = '#3687e7'
     mustard = '#D4AD50'
     purple = '#5E233B'
+    pink = '#F87FAB'
 
-    color1 = red if start_tick_title == "Republicans" else purple 
+    color1 = red if start_tick_title == "Republicans" else pink 
     color2 = lightblue if end_tick_title == "Democrats" else blue
 
 
@@ -299,9 +300,9 @@ def dotplot2(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,
         if j == 0:
             # ax.text(start - h_label_offset, y[j], "'22", ha='right', va='center', color='black')
             # ax.text(end + h_label_offset, y[j], "'24", ha='left', va='center', color='black')
-            offset = (-.06 * x_axis_limit) if x_axis_limit!= 1 else 0
-            ax.text(start + (offset*sign), y[j]+ y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=data_label_fontsize, fontname='StyreneAMedium')
-            ax.text(end + (-1*offset*sign), y[j]+ y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=data_label_fontsize, fontname='StyreneAMedium')
+            offset = (-.06 * x_axis_limit) if x_axis_limit != 1 else -.02
+            ax.text(start + offset * sign, y[j]+ y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=data_label_fontsize, fontname='StyreneAMedium')
+            ax.text(end - offset * sign, y[j]+ y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=data_label_fontsize, fontname='StyreneAMedium')
             
             ax.plot([start, start], [y[j]+y_label_offset*.3, y[j]+y_label_offset*.7], color=color1, zorder=0)
             ax.plot([end, end], [y[j]+y_label_offset*.3, y[j]+y_label_offset*.7], color=color2, zorder=0)
