@@ -1,14 +1,16 @@
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
-
-import numpy as np
-import pandas as pd
+import matplotlib.colors as mcolors
 import matplotlib
 import matplotlib.patheffects as pe
 from matplotlib import font_manager
-import seaborn as sns
-import os
 from matplotlib.ticker import FuncFormatter
+import colorsys
+import seaborn as sns
+
+import numpy as np
+import pandas as pd
+
 
 colors = {
     "very_confident": "#2E4465",
@@ -18,8 +20,25 @@ colors = {
     "not_confident_at_all": "#321420" 
 }
 
-import matplotlib
-from matplotlib import font_manager
+
+def adjust_color(color, hue_shift=0, sat_mult=1, bright_mult=1):
+    # Convert color name to RGB
+    rgb = mcolors.to_rgb(color)
+    
+    # Convert RGB to HLS (Hue, Lightness, Saturation)
+    h, l, s = colorsys.rgb_to_hls(*rgb)
+    
+    # Adjust hue, saturation, and brightness
+    h = (h + hue_shift) % 1  # Adjust hue and wrap around using modulo 1
+    s = min(max(s * sat_mult, 0), 1)  # Adjust saturation and clamp between 0 and 1
+    l = min(max(l * bright_mult, 0), 1)  # Adjust brightness and clamp between 0 and 1
+    
+    # Convert back to RGB
+    new_rgb = colorsys.hls_to_rgb(h, l, s)
+    
+    # Return the new color as an RGB tuple or a hex code if you prefer
+    return mcolors.to_hex(new_rgb)
+
 
 def setup_custom_fonts():
     """
@@ -226,7 +245,7 @@ def plot_question(df, question, question_text, sort=True):
 
     return ax
 
-def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,plot_type=None,x_axis_limit = 1):
+def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,plot_type=None,x_axis_limit = 1,color1=None,color2=None):
     categories = df.index
     n = len(categories)
 
@@ -249,8 +268,10 @@ def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,p
     purple = '#5E233B'
     pink = '#F87FAB'
 
-    color1 = red if start_tick_title == "Republicans" else pink 
-    color2 = lightblue if end_tick_title == "Democrats" else blue
+    if not color1:
+        color1 = red if start_tick_title == "Republicans" else pink 
+    if not color2:
+        color2 = lightblue if end_tick_title == "Democrats" else blue
 
 
     x_label_offset = 0.015 * x_axis_limit
