@@ -213,8 +213,7 @@ def run_and_display(data,codebook,q_codebook,question,demo=None,suppress_output=
 
         if not suppress_output:
             question_text = get_question_text(q_codebook, question)
-            visualizing.plot_question(results, question, question_text, sort=sort,save_fig_path = None)
-
+            visualizing.plot_question(results, question, question_text, sort=sort,save_fig_path = save_fig_path)
 
         return results
 
