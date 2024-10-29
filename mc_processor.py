@@ -189,7 +189,7 @@ def get_parallel_questions(data, codebook, q_codebook, questions, demo=None):
     return df
 
 
-def run_and_display(data,codebook,q_codebook,question,demo=None,suppress_output=False,sort=True):
+def run_and_display(data,codebook,q_codebook,question,demo=None,suppress_output=False,sort=True,save_fig_path = None):
     """
     Runs and displays results for a given question
     """
@@ -213,7 +213,8 @@ def run_and_display(data,codebook,q_codebook,question,demo=None,suppress_output=
 
         if not suppress_output:
             question_text = get_question_text(q_codebook, question)
-            visualizing.plot_question(results, question, question_text, sort=sort)
+            visualizing.plot_question(results, question, question_text, sort=sort,save_fig_path = None)
+
 
         return results
 

@@ -193,7 +193,7 @@ def plot_split_sample(all_dfs, q_codebook):
     plt.show()
 
 
-def plot_question(df, question, question_text, sort=True):
+def plot_question(df, question, question_text, sort=True,save_fig_path = None):
     # this should handle most of our plots
     # it could eventually be used to plot the confidence questions
     # current problems that could be fixed some day: bar/group spacing, colors.
@@ -240,6 +240,9 @@ def plot_question(df, question, question_text, sort=True):
                     path_effects=[pe.withStroke(linewidth=1, foreground="gray")])
 
     ax.xaxis.set_major_formatter(mtick.PercentFormatter(xmax=1, decimals=0))  # xmax=1 because your data is in proportion (0 to 1)
+
+    if save_fig_path:
+        plt.savefig(save_fig_path)
 
     plt.show()
 
