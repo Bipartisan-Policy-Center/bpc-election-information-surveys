@@ -223,12 +223,10 @@ def run_and_display(data,codebook,q_codebook,question,demo=None,suppress_output=
 
 ### IGNORE SPLIT SAMPLE
 
-def get_confidence_results(data, codebook, q_codebook, question_number=20, demo=None, suppress_output=False):
+def get_confidence_results(data, codebook, q_codebook, question='BPC20', demo=None, suppress_output=False):
+    question_a = f"{question}a"
     if not suppress_output:
-        print(f"BPC{question_number}", q_codebook[f"BPC{question_number}a"])
-    question = f"joined_column_BPC{question_number}"
-    cols = data.filter(regex=f'^BPC{question_number}').columns
-    data[question] = data[cols].bfill(axis=1).iloc[:, 0]
+        print(f"{question}: {q_codebook[question_a]}")
 
     demo_results = {}
 
@@ -238,14 +236,14 @@ def get_confidence_results(data, codebook, q_codebook, question_number=20, demo=
             numerators = group_data.groupby(question).apply(lambda x: x['wts'].sum())
             denominator = numerators.sum()
             results = numerators / denominator
-            new_index = [get_name_from_codebook(codebook, f"BPC{question_number}a", index) for index in results.index]
+            new_index = [get_name_from_codebook(codebook, question_a, index) for index in results.index]
             results.index = new_index
             demo_results[demo_category_name] = results
 
     numerators = data.groupby(question).apply(lambda x: x['wts'].sum())
     denominator = numerators.sum()
     results = numerators / denominator
-    new_index = [get_name_from_codebook(codebook, f"BPC{question_number}a", index) for index in results.index]
+    new_index = [get_name_from_codebook(codebook, question_a, index) for index in results.index]
     results.index = new_index
     demo_results["overall"] = results
 
