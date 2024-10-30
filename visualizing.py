@@ -258,7 +258,7 @@ def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,p
 
     setup_custom_fonts()
 
-    delta = 0.2
+    delta = 0.1 if len(categories) < 3 else 0.2
     y = np.linspace(-delta, delta, n)
     # colors = ['blue', 'green', 'red']
     # colors = ['#3C608A', '#3C608A', '#3C608A']
@@ -340,7 +340,7 @@ def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,p
 
     # ax.set_yticklabels(['All jurisdictions', 'County-equivalents', '20 most populous\ncounties'],
     #                 fontname='StyreneAMedium', color=darkgray, fontsize=11.5)
-    ax.set_ylim([delta*1.5, -delta*2])
+    ax.set_ylim([delta*2, -delta*2])
     ax.grid(False)
 
 
