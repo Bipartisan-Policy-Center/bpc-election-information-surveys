@@ -324,9 +324,11 @@ def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,p
         if j == 0:
             # ax.text(start - h_label_offset, y[j], "'22", ha='right', va='center', color='black')
             # ax.text(end + h_label_offset, y[j], "'24", ha='left', va='center', color='black')
-            offset = (-.06 * x_axis_limit) if x_axis_limit != 1 else -.02
-            ax.text(start + offset * sign, y[j]+ y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=data_label_fontsize, fontname='StyreneAMedium')
-            ax.text(end - offset * sign, y[j]+ y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=data_label_fontsize, fontname='StyreneAMedium')
+            # offset = (-.06 * x_axis_limit) if x_axis_limit != 1 else -.02
+            start_offset = -len(start_tick_title)*.005
+            end_offset = -len(end_tick_title)*.005
+            ax.text(start + (start_offset * sign), y[j]+ y_label_offset, start_tick_title, ha='center', va='center', color=color1, fontsize=data_label_fontsize, fontname='StyreneAMedium')
+            ax.text(end - (end_offset * sign), y[j]+ y_label_offset, end_tick_title, ha='center', va='center', color=color2, fontsize=data_label_fontsize, fontname='StyreneAMedium')
             
             ax.plot([start, start], [y[j]+y_label_offset*.3, y[j]+y_label_offset*.7], color=color1, zorder=0)
             ax.plot([end, end], [y[j]+y_label_offset*.3, y[j]+y_label_offset*.7], color=color2, zorder=0)
