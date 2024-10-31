@@ -376,8 +376,9 @@ def dotplot(df, file_name, start_tick_title, end_tick_title, xlabel,title=None,p
     # # Remove the background
     ax.set_facecolor('white')
 
-    # # Display the plot
-    # plt.title(title, fontname='StyreneABlack', fontsize=title_fontsize)
+    # # title
+    if title:
+        plt.title(title, fontname='StyreneABlack', fontsize=title_fontsize)
 
     plt.savefig(f'{file_name}', dpi=300, bbox_inches='tight')
 
