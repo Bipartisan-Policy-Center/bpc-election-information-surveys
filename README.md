@@ -8,6 +8,8 @@ This repository contains the data, analysis, and visualizations for surveys cond
 
 One question (“BPC3: In the United States, there is information voters need to register and vote. Where are you most likely to look for this information?”) was accidentally overwritten by another question (“BPC4: If you wanted to know more about how elections are run in the United States, where are you most likely to look for that information?”) in the first field. As such, we combined responses from the two surveys for all questions except BPC3. Accordingly, the total sample size for BPC3 is 1,891 and the sample size for all other questions is 3,634.
 
+Results and analysis here: Rachel Orey, William T. Adler, Theo Menon, Julianne Lampert. (October 31, 2024). [Where Voters Look for Information Ahead of the 2024 Election](https://bipartisanpolicy.org/blog/where-voters-look-for-information-ahead-of-the-2024-election). _Bipartisan Policy Center._
+
 ## December 2023
 
 Our 2023 poll was conducted by Morning Consult between December 13- 15, 2023 among a sample of 2,203 adults.
